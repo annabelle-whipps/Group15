@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">MedPal</string>
+    <string name="Application_Name">MedPal</string>
+    <string name="sign_in">Sign In</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="sign_in_button">Sign In</string>
+</resources>
