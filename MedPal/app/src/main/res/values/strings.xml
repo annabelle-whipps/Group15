@@ -1,9 +1,18 @@
 <resources>
-    <string name="app_name">MedPal</string>
-    <string name="Application_Name">MedPal</string>
-    <string name="sign_in">Sign In</string>
-    <string name="sign_up">Sign Up</string>
+    <string name="applicationName">MedPal</string>
+    <string name="signIn">Sign In</string>
+    <string name="signUp">Sign Up</string>
     <string name="username">Username</string>
     <string name="password">Password</string>
-    <string name="sign_in_button">Sign In</string>
+
+<!--  Medical Record Page  -->
+    <string name="medicalRecord">My Medical Record</string>
+    <string name="personName">Lisa Williams</string>
+    <string name="dateOfBirth">27 / 08 / 1999</string>
+    <string name="address">Address :</string>
+    <string name="dob">DOB :</string>
+    <string name="personCity">Aberdeen</string>
+    <string name="personPostCode">AB25 1XF</string>
+
+
 </resources>

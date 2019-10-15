@@ -12,7 +12,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/Application_Name"
+        android:text="@string/applicationName"
         android:textSize="40sp"/>
 
     <LinearLayout
@@ -23,13 +23,13 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/sign_in"
+        android:text="@string/signIn"
         android:id="@+id/signInButton"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/sign_up"
+        android:text="@string/signUp"
         android:id="@+id/logInButton"/>
     </LinearLayout>
 
