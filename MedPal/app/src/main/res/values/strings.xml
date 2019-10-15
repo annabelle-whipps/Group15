@@ -1,9 +1,15 @@
 <resources>
+
+    <!--Logo Descriptor-->
+    <string name="medpal_logo">MedPal Logo</string>
+
+    <!--Application Name-->
+    <string name="Application_Name">MedPal</string>
+
+    <!-- Welcome Page -->
     <string name="applicationName">MedPal</string>
-    <string name="signIn">Sign In</string>
-    <string name="signUp">Sign Up</string>
-    <string name="username">Username</string>
-    <string name="password">Password</string>
+    <string name="sign_in">Sign In</string>
+    <string name="sign_up">Sign Up</string>
 
 <!--  Medical Record Page  -->
     <string name="medicalRecord">My Medical Record</string>
@@ -14,5 +20,18 @@
     <string name="personCity">Aberdeen</string>
     <string name="personPostCode">AB25 1XF</string>
 
+    <!--Login Page -->
+    <string name="sign_in_button">Sign In</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="username_hint">Annabelle</string>
+    <string name="password_hint">Password#</string>
 
+    <!--Register Page-->
+    <string name="users_name">Name</string>
+    <string name="autoFillHintName">Annabelle</string>
+    <string name="phone_number_hint">Phone Number</string>
+    <string name="phone_hint_example">077733322110</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="register_button">Register</string>
 </resources>

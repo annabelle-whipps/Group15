@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
-    tools:context=".LogIn">
+    tools:context=".Register">
 
     <TextView
         android:id="@+id/header"
@@ -27,10 +27,11 @@
         android:id="@+id/logo"
         android:layout_width="175dp"
         android:layout_height="195dp"
+        android:layout_below="@id/header"
         android:layout_marginStart="118dp"
-        android:layout_marginTop="157dp"
+        android:layout_marginTop="148dp"
         android:layout_marginEnd="118dp"
-        android:layout_marginBottom="379dp"
+        android:layout_marginBottom="388dp"
         android:contentDescription="@string/medpal_logo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -39,16 +40,16 @@
         app:srcCompat="@mipmap/logo1_foreground" />
 
     <EditText
-        android:id="@+id/editTextUsername"
+        android:id="@+id/registerUserName"
         android:layout_width="350dp"
         android:layout_height="50dp"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="378dp"
+        android:layout_marginTop="372dp"
         android:layout_marginEnd="31dp"
-        android:layout_marginBottom="303dp"
-        android:autofillHints="@string/username_hint"
+        android:layout_marginBottom="309dp"
+        android:autofillHints="@string/autoFillHintName"
         android:background="@color/colorPrimaryDark"
-        android:hint="@string/username"
+        android:hint="@string/users_name"
         android:inputType="text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -56,16 +57,46 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextPassword"
         android:layout_width="350dp"
         android:layout_height="50dp"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="445dp"
+        android:layout_marginTop="435dp"
         android:layout_marginEnd="31dp"
-        android:layout_marginBottom="236dp"
-        android:autofillHints="@string/password_hint"
+        android:layout_marginBottom="246dp"
+        android:autofillHints="@string/phone_hint_example"
+        android:background="@color/colorPrimaryDark"
+        android:hint="@string/phone_number_hint"
+        android:inputType="phone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="495dp"
+        android:layout_marginEnd="31dp"
+        android:layout_marginBottom="186dp"
         android:background="@color/colorPrimaryDark"
         android:hint="@string/password"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="554dp"
+        android:layout_marginEnd="31dp"
+        android:layout_marginBottom="127dp"
+        android:background="@color/colorPrimaryDark"
+        android:hint="@string/confirm_password"
         android:inputType="textPassword"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -75,16 +106,14 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="161dp"
-        tools:layout_editor_absoluteY="525dp"
         android:layout_marginStart="161dp"
-        android:layout_marginTop="516dp"
+        android:layout_marginTop="617dp"
         android:layout_marginEnd="162dp"
-        android:layout_marginBottom="167dp"
+        android:layout_marginBottom="66dp"
         android:background="@drawable/custom_button"
-        android:text="@string/sign_in_button"
+        android:text="@string/register_button"
         android:textAllCaps="false"
-        android:textColor="@color/Button_colour"
+        android:textColor="#ffffff"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

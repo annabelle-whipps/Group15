@@ -1,36 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:orientation="vertical"
-    android:gravity="center_horizontal">
-
+    android:background="@color/colorPrimary">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/applicationName"
-        android:textSize="40sp"/>
+        android:text ="@string/applicationName"
+        android:layout_marginStart="112dp"
+        android:layout_marginEnd="130dp"
+        android:layout_marginBottom="563dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+        android:textSize="50sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="10dp">
+    <ImageView
+        android:layout_width="257dp"
+        android:layout_height="244dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="172dp"
+        android:layout_marginEnd="86dp"
+        android:layout_marginBottom="315dp"
+        android:contentDescription="@string/medpal_logo"
+        android:paddingTop="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@mipmap/logo1_foreground" />
+
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/signIn"
-        android:id="@+id/signInButton"/>
+        android:id="@+id/signUpButton"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="231dp"
+        android:layout_marginTop="463dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="218dp"
+        android:background="@drawable/custom_button"
+        android:text="@string/sign_up"
+        android:textAllCaps="false"
+        android:textColor="@color/Button_colour"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/signUp"
-        android:id="@+id/logInButton"/>
-    </LinearLayout>
+        android:id="@+id/logInButton"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="463dp"
+        android:layout_marginEnd="234dp"
+        android:layout_marginBottom="218dp"
+        android:background="@drawable/custom_button"
+        android:text="@string/sign_in"
+        android:textAllCaps="false"
+        android:textColor="@color/Button_colour"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
