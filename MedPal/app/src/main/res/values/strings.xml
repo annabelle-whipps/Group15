@@ -19,6 +19,12 @@
     <string name="dob">DOB :</string>
     <string name="personCity">Aberdeen</string>
     <string name="personPostCode">AB25 1XF</string>
+    <string name="personPhone">+44 1234 5678 999</string>
+    <string name="phone">Phone :</string>
+    <string name="diseases">Diseases :</string>
+    <string name="allergies">Allergies :</string>
+    <string name="update">Update your record</string>
+    <string name="personAddress">71 Farmers Hall</string>
 
     <!--Login Page -->
     <string name="sign_in_button">Sign In</string>
