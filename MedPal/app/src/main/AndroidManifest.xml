@@ -15,7 +15,8 @@
         <activity android:name=".Register"
         android:parentActivityName=".MainActivity">
         </activity>
-        <activity android:name=".MedicalRecord"></activity>
+        <activity android:name=".MedicalRecord">
+        </activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,10 +24,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Register" />
-        <activity android:name=".LogIn" />
-        <activity android:name=".MainActivity">
-        </activity>
+        <activity android:name=".ImportantContacts"></activity>
     </application>
 
 </manifest>
