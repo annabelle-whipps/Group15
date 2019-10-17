@@ -42,7 +42,7 @@
                         <ImageView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:src="@drawable/ic_launcher_background"
+                            android:src="@mipmap/profile_pic_foreground"
                             android:contentDescription="Profile Picture"/>
                     </LinearLayout>
                     <LinearLayout
@@ -181,7 +181,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:contentDescription="@string/ecProfilePicture"
-                                android:src="@drawable/ic_launcher_background" />
+                                android:src="@mipmap/profile_pic_foreground" />
                         </LinearLayout>
 
                         <LinearLayout
