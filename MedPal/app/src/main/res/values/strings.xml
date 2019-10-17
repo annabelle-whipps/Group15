@@ -11,7 +11,7 @@
     <string name="sign_in">Sign In</string>
     <string name="sign_up">Sign Up</string>
 
-<!--  Medical Record Page  -->
+    <!--  Medical Record Page  -->
     <string name="medicalRecord">My Medical Record</string>
     <string name="personName">Lisa Williams</string>
     <string name="dateOfBirth">27 / 08 / 1999</string>
@@ -39,5 +39,25 @@
     <string name="phone_number_hint">Phone Number</string>
     <string name="phone_hint_example">077733322110</string>
     <string name="confirm_password">Confirm Password</string>
+
+    <!--Important Contacts Page   -->
     <string name="register_button">Register</string>
+    <string name="importantContacts">Important Contacts</string>
+    <string name="generalPractitioner">General Practitioner :</string>
+    <string name="gpName">Dr. Dolittle</string>
+    <string name="gpPhone">+44 1234 5678 900</string>
+    <string name="gpCall">Call GP</string>
+    <string name="gpMailLabel">drDolittle@gp.uk</string>
+    <string name="gpMail">Email GP</string>
+    <string name="gpAddress">15 Hospital Street   AB45 6FT Aberdeen</string>
+    <string name="gpGPS">Get directions</string>
+    <string name="gpEdit">Edit details</string>
+    <string name="ecProfilePicture">Profile Picture</string>
+    <string name="emergencyContact">Emergency Contact :</string>
+    <string name="ecName">Kate Williams</string>
+    <string name="ecRelation">Mother</string>
+    <string name="ecPhone">+44 9876 5432 100</string>
+    <string name="ecAddress">71 Farmers Hall   AB25 1XF Aberdeen</string>
+    <string name="ecGPS">Get directions</string>
+    <string name="gpEdit2">Edit details</string>
 </resources>
