@@ -9,9 +9,13 @@
         android:roundIcon="@mipmap/logo1_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".LogIn"
+        android:parentActivityName=".MainActivity">
+        </activity>
+        <activity android:name=".Register"
+        android:parentActivityName=".MainActivity">
+        </activity>
         <activity android:name=".MedicalRecord"></activity>
-        <activity android:name=".Register"></activity>
-        <activity android:name=".LogIn" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
