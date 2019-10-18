@@ -2,7 +2,10 @@ package com.example.medpal;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 public class ImportantContacts extends AppCompatActivity {
 
@@ -16,5 +19,14 @@ public class ImportantContacts extends AppCompatActivity {
         getSupportActionBar().setLogo(R.mipmap.logo1_foreground);
         getSupportActionBar().setDisplayUseLogoEnabled(true);
 
+        Button btnEdit = findViewById(R.id.btnEdit);
+
+        btnEdit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent importantContactsEditIntent = new Intent(ImportantContacts.this, ImportantContactsEdit.class);
+                startActivity(importantContactsEditIntent);
+            }
+        });
     }
 }
