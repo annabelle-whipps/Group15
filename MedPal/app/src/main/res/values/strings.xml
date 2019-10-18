@@ -69,4 +69,36 @@
     <string name="btnMedicalCentres">Medical Centres</string>
     <string name="btnSettings">Settings</string>
     <string name="btnHelp">HELP!</string>
+
+    <!--Medicine Details   -->
+    <string name="tvMyPrescriptions">My Prescriptions:</string>
+    <string name="tvMedicine1">Medicine 1</string>
+    <string name="tvMedicine2">Medicine 2</string>
+    <string name="tvMedicine3">Medicine 3</string>
+    <string name="tvMedicine4">Medicine 4</string>
+    <string name="tvMedicine5">Medicine 5</string>
+    <string name="tvMedicine6">Medicine 6</string>
+    <string name="tvMedicine7">Medicine 7</string>
+    <string name="tvMedicine8">Medicine 8</string>
+    <string name="tvMedicine9">Medicine 9</string>
+    <string name="tvMedicine10">Medicine 10</string>
+
+    <!--Medicine Details   -->
+    <string name="tvMedicineName">Medicine Name</string>
+    <string name="tvPrescriptionDetails">Prescription Details</string>
+    <string name="tvDoseLabel">Dose</string>
+    <string name="tvDose">10mg</string>
+    <string name="tvSideEffectsLabel">Important Contacts</string>
+    <string name="tvSideEffects">Nausea</string>
+    <string name="tvPrescribedByLabel">Medical Centres</string>
+    <string name="tvPrescribedBy">Dr DoLittle</string>
+    <string name="tvEtcLabel">Settings</string>
+    <string name="tvEtc">Ets., Etc.</string>
+    <string name="btnOrderMore">Order More</string>
+    <string name="btnCancel">Cancel</string>
+    <string name="tvReminders">Reminders</string>
+    <string name="tvEightAM">8:00 AM</string>
+    <string name="tvOnePM">1:00 PM</string>
+    <string name="tvSixPM">6:00 PM</string>
 </resources>
+

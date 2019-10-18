@@ -15,22 +15,18 @@
         <activity android:name=".Register"
         android:parentActivityName=".MainActivity">
         </activity>
-        <activity android:name=".HomePage"></activity>
-        <activity android:name=".MedicalRecord" android:parentActivityName="com.example.medpal.HomePage">
-        </activity>
-        <activity android:name=".MedicalRecordEdit" android:parentActivityName="com.example.medpal.MedicalRecord">
+        <activity android:name=".MedicalRecord">
         </activity>
         <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
-        <activity android:name=".ImportantContacts" android:parentActivityName="com.example.medpal.HomePage">
-
+        <activity android:name=".ImportantContacts">
         </activity>
         <activity android:name=".ImportantContactsEdit" android:parentActivityName="com.example.medpal.ImportantContacts">
+            <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
         </activity>
     </application>
     <uses-permission android:name="android.permission.CALL_PHONE" />
