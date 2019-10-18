@@ -7,25 +7,10 @@
     tools:context=".MainActivity"
     android:background="@color/colorPrimary">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text ="@string/applicationName"
-        android:layout_marginStart="112dp"
-        android:layout_marginEnd="130dp"
-        android:layout_marginBottom="563dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display3"
-        android:textSize="50sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
 
     <ImageView
-        android:layout_width="257dp"
-        android:layout_height="244dp"
+        android:layout_width="265dp"
+        android:layout_height="254dp"
         android:layout_marginStart="68dp"
         android:layout_marginTop="172dp"
         android:layout_marginEnd="86dp"
@@ -36,29 +21,29 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@mipmap/logo1_foreground" />
 
     <Button
-        android:id="@+id/signUpButton"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="231dp"
-        android:layout_marginTop="463dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginBottom="218dp"
-        android:background="@drawable/custom_button"
-        android:text="@string/sign_up"
-        android:textAllCaps="false"
-        android:textColor="@color/Button_colour"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+            android:id="@+id/signUpButton"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="231dp"
+            android:layout_marginTop="463dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="218dp"
+            android:background="@drawable/custom_button"
+            android:text="@string/sign_up"
+            android:textAllCaps="false"
+            android:textColor="@color/Button_colour"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
 
-    <Button
+        <Button
         android:id="@+id/logInButton"
         android:layout_width="150dp"
         android:layout_height="50dp"

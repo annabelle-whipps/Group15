@@ -48,7 +48,7 @@
     <string name="gpPhone">+44 1234 5678 900</string>
     <string name="gpCall">Call GP</string>
     <string name="gpMailLabel">drDolittle@gp.uk</string>
-    <string name="gpMail">Email GP</string>
+    <string name="gpMail">Email :</string>
     <string name="gpAddress">15 Hospital Street   AB45 6FT Aberdeen</string>
     <string name="gpGPS">Get directions</string>
     <string name="gpEdit">Edit details</string>

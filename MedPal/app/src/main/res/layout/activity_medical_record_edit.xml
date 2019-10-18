@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
-    tools:context=".MedicalRecord">
+    tools:context=".MedicalRecordEdit">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -40,7 +40,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
-                    <TextView
+                    <EditText
                         android:id="@+id/personName"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
@@ -66,7 +66,7 @@
                         android:textColor="@color/colorPrimaryDark"
                         android:textStyle="bold"
                         android:layout_weight="1"/>
-                    <TextView
+                    <EditText
                         android:id="@+id/personDob"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -89,7 +89,7 @@
                         android:textColor="@color/colorPrimaryDark"
                         android:textStyle="bold"
                         android:layout_weight="1"/>
-                    <TextView
+                    <EditText
                         android:id="@+id/personAddress"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -107,7 +107,7 @@
                         android:layout_height="match_parent"
                         android:textColor="@color/colorPrimaryDark"
                         android:layout_weight="1"/>
-                    <TextView
+                    <EditText
                         android:id="@+id/personPostCode"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -126,7 +126,7 @@
                         android:textAlignment="center"
                         android:textColor="@color/colorPrimaryDark"
                         android:layout_weight="1"/>
-                    <TextView
+                    <EditText
                         android:id="@+id/personCity"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -149,7 +149,7 @@
                         android:textColor="@color/colorPrimaryDark"
                         android:textStyle="bold"
                         android:layout_weight="1"/>
-                    <TextView
+                    <EditText
                         android:id="@+id/personPhone"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -172,7 +172,7 @@
                         android:textColor="@color/colorPrimaryDark"
                         android:textStyle="bold"
                         android:layout_weight="1"/>
-                    <TextView
+                    <EditText
                         android:id="@+id/diseasesList"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -195,7 +195,7 @@
                         android:textColor="@color/colorPrimaryDark"
                         android:textStyle="bold"
                         android:layout_weight="1"/>
-                    <TextView
+                    <EditText
                         android:id="@+id/allergiesList"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -203,26 +203,6 @@
                         android:textSize="25dp"
                         android:textColor="@color/colorPrimaryDark"
                         android:layout_weight="1"/>
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal">
-                    <Button
-                        android:id="@+id/update"
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/update"
-                        android:textSize="25dp"
-                        android:layout_marginTop="15dp"
-                        android:layout_marginBottom="15dp"
-                        android:layout_marginLeft="15dp"
-                        android:layout_marginRight="15dp"
-                        android:background="@drawable/button_border_dark"
-                        android:textAlignment="center"
-                        android:textColor="#FFFFFF"
-                        android:textStyle="bold"
-                        android:layout_alignParentBottom="true" />
                 </LinearLayout>
         </LinearLayout>
     </ScrollView>

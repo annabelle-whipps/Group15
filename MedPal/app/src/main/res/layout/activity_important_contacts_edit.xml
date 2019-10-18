@@ -57,7 +57,7 @@
                             android:textColor="#FFFFFF"
                             android:textSize="25dp"
                             android:gravity="center"/>
-                        <TextView
+                        <EditText
                             android:id="@+id/gpName"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
@@ -72,26 +72,27 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:layout_marginTop="15dp">
+
                     <TextView
+                        android:id="@+id/gpCall"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="@string/phone"
+                        android:textSize="20dp"
+                        android:layout_weight="1"
+                        android:textColor="@color/colorPrimary"
+                        android:gravity="center"
+                        />
+                    <EditText
                         android:id="@+id/gpPhone"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:text="@string/gpPhone"
+                        android:inputType="phone"
                         android:textSize="20dp"
                         android:layout_weight="1"
                         android:textColor="@color/colorPrimary"
                         android:gravity="center"/>
-                    <Button
-                        android:id="@+id/gpCall"
-                        android:layout_width="match_parent"
-                        android:layout_marginRight="15dp"
-                        android:layout_marginLeft="15dp"
-                        android:layout_height="wrap_content"
-                        android:text="@string/gpCall"
-                        android:layout_weight="1"
-                        android:background="@drawable/button_border_light"
-                        android:textColor="@color/colorPrimaryDark"
-                        />
 
                 </LinearLayout>
                 <LinearLayout
@@ -99,8 +100,19 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:layout_marginTop="15dp">
+
                     <TextView
                         android:id="@+id/gpMailLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="@string/gpMail"
+                        android:textSize="20dp"
+                        android:textColor="@color/colorPrimary"
+                        android:gravity="center"
+                        android:layout_weight="1"/>
+
+                    <EditText
+                        android:id="@+id/gpMail"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:text="@string/gpMailLabel"
@@ -108,16 +120,7 @@
                         android:layout_weight="1"
                         android:textColor="@color/colorPrimary"
                         android:gravity="center"/>
-                    <Button
-                        android:id="@+id/gpMail"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:text="@string/gpMail"
-                        android:layout_marginRight="15dp"
-                        android:layout_marginLeft="15dp"
-                        android:layout_weight="1"
-                        android:background="@drawable/button_border_light"
-                        android:textColor="@color/colorPrimaryDark"/>
+
 
                 </LinearLayout>
                 <LinearLayout
@@ -127,29 +130,27 @@
                     android:layout_marginTop="15dp">
 
                     <TextView
-                            android:id="@+id/gpAddress"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:text="@string/gpAddress"
-                            android:textSize="15dp"
-                            android:textColor="@color/colorPrimary"
-                            android:gravity="center"
-                            android:layout_weight="1"/>
-
-
-                    <Button
                         android:id="@+id/gpGPS"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/gpGPS"
-                        android:layout_weight="1"
-                        android:layout_marginRight="15dp"
-                        android:layout_marginLeft="15dp"
-                        android:background="@drawable/button_border_light"
-                        android:textColor="@color/colorPrimaryDark"/>
+                        android:layout_height="match_parent"
+                        android:text="@string/address"
+                        android:textSize="20dp"
+                        android:textColor="@color/colorPrimary"
+                        android:gravity="center"
+                        android:layout_weight="1"/>
+
+                    <EditText
+                        android:id="@+id/gpAddress"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="@string/gpAddress"
+                        android:textSize="15dp"
+                        android:textColor="@color/colorPrimary"
+                        android:gravity="center"
+                        android:layout_weight="1"/>
                 </LinearLayout>
 
-                <!--    /////////////////////////////////////////////////////////////////////////////////////////////////////            -->
+<!--    /////////////////////////////////////////////////////////////////////////////////////////////////////            -->
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -191,7 +192,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:orientation="horizontal">
-                                <TextView
+                                <EditText
                                     android:id="@+id/ecName"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
@@ -201,7 +202,7 @@
                                     android:textSize="20dp"
                                     android:layout_weight="1"/>
 
-                                <TextView
+                                <EditText
                                     android:id="@+id/ecRelation"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
@@ -223,25 +224,26 @@
                         android:orientation="horizontal">
 
                         <TextView
+                            android:id="@+id/ecCall"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="@string/phone"
+                            android:textSize="20dp"
+                            android:layout_weight="1"
+                            android:textColor="@color/colorPrimary"
+                            android:gravity="center"
+                            />
+
+                        <EditText
                             android:id="@+id/ecPhone"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
+                            android:inputType="phone"
                             android:gravity="center"
                             android:text="@string/ecPhone"
                             android:textColor="@color/colorPrimary"
                             android:textSize="20dp" />
-
-                        <Button
-                            android:id="@+id/ecCall"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:background="@drawable/button_border_light"
-                            android:text="Call GP"
-                            android:layout_marginRight="15dp"
-                            android:layout_marginLeft="15dp"
-                            android:textColor="@color/colorPrimaryDark" />
 
                     </LinearLayout>
 
@@ -252,6 +254,16 @@
                         android:orientation="horizontal">
 
                         <TextView
+                            android:id="@+id/ecGPS"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="@string/address"
+                            android:textSize="20dp"
+                            android:textColor="@color/colorPrimary"
+                            android:gravity="center"
+                            android:layout_weight="1"/>
+
+                        <EditText
                             android:id="@+id/ecAddress"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
@@ -261,30 +273,7 @@
                             android:gravity="center"
                             android:layout_weight="1"/>
 
-                        <Button
-                            android:id="@+id/ecGPS"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:background="@drawable/button_border_light"
-                            android:text="@string/ecGPS"
-                            android:layout_marginRight="15dp"
-                            android:layout_marginLeft="15dp"
-                            android:textColor="@color/colorPrimaryDark" />
-
                     </LinearLayout>
-
-                    <Button
-                        android:id="@+id/btnEdit"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="15dp"
-                        android:background="@drawable/button_border_light"
-                        android:text="@string/gpEdit2"
-                        android:layout_marginRight="15dp"
-                        android:layout_marginLeft="15dp"
-                        android:layout_marginBottom="15dp"
-                        android:textColor="@color/colorPrimaryDark" />
                 </LinearLayout>
 
             </LinearLayout>
