@@ -7,122 +7,133 @@
     android:background="@color/colorPrimary"
     tools:context=".Register">
 
-    <TextView
-        android:id="@+id/header"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="137dp"
-        android:layout_marginTop="72dp"
-        android:layout_marginEnd="138dp"
-        android:layout_marginBottom="605dp"
-        android:text="@string/Application_Name"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display3"
-        android:textSize="40sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/logo"
-        android:layout_width="175dp"
-        android:layout_height="195dp"
-        android:layout_below="@id/header"
-        android:layout_marginStart="118dp"
-        android:layout_marginTop="148dp"
-        android:layout_marginEnd="118dp"
-        android:layout_marginBottom="388dp"
-        android:contentDescription="@string/medpal_logo"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/logo1_foreground" />
+            <TextView
+                android:id="@+id/header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="137dp"
+                android:layout_marginTop="72dp"
+                android:layout_marginEnd="138dp"
+                android:layout_marginBottom="605dp"
+                android:text="@string/Application_Name"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+                android:textSize="40sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/registerUserName"
-        android:layout_width="350dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="372dp"
-        android:layout_marginEnd="31dp"
-        android:layout_marginBottom="309dp"
-        android:autofillHints="@string/autoFillHintName"
-        android:background="@drawable/custom_edit_text"
-        android:hint="@string/users_name"
-        android:inputType="text"
-        android:paddingLeft="5dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            <ImageView
+                android:id="@+id/logo"
+                android:layout_width="175dp"
+                android:layout_height="195dp"
+                android:layout_below="@id/header"
+                android:layout_marginStart="118dp"
+                android:layout_marginTop="148dp"
+                android:layout_marginEnd="118dp"
+                android:layout_marginBottom="388dp"
+                android:contentDescription="@string/medpal_logo"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@mipmap/logo1_foreground" />
 
-    <EditText
-        android:layout_width="350dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="435dp"
-        android:layout_marginEnd="31dp"
-        android:layout_marginBottom="246dp"
-        android:autofillHints="@string/phone_hint_example"
-        android:background="@drawable/custom_edit_text"
-        android:hint="@string/phone_number_hint"
-        android:inputType="phone"
-        android:paddingLeft="5dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            <EditText
+                android:id="@+id/registerUserName"
+                android:layout_width="350dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="372dp"
+                android:layout_marginEnd="31dp"
+                android:layout_marginBottom="309dp"
+                android:autofillHints="@string/autoFillHintName"
+                android:background="@drawable/custom_edit_text"
+                android:hint="@string/users_name"
+                android:inputType="text"
+                android:paddingLeft="5dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
+            <EditText
+                android:layout_width="350dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="435dp"
+                android:layout_marginEnd="31dp"
+                android:layout_marginBottom="246dp"
+                android:autofillHints="@string/phone_hint_example"
+                android:background="@drawable/custom_edit_text"
+                android:hint="@string/phone_number_hint"
+                android:inputType="phone"
+                android:paddingLeft="5dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        android:layout_width="350dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="495dp"
-        android:layout_marginEnd="31dp"
-        android:layout_marginBottom="186dp"
-        android:background="@drawable/custom_edit_text"
-        android:hint="@string/password"
-        android:inputType="textPassword"
-        android:paddingLeft="5dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            <EditText
 
-    <EditText
-        android:layout_width="350dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="554dp"
-        android:layout_marginEnd="31dp"
-        android:layout_marginBottom="127dp"
-        android:background="@drawable/custom_edit_text"
-        android:hint="@string/confirm_password"
-        android:inputType="textPassword"
-        android:paddingLeft="5dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+                android:layout_width="350dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="495dp"
+                android:layout_marginEnd="31dp"
+                android:layout_marginBottom="186dp"
+                android:background="@drawable/custom_edit_text"
+                android:hint="@string/password"
+                android:inputType="textPassword"
+                android:paddingLeft="5dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/btnRegister"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="66dp"
-        android:layout_marginEnd="162dp"
-        android:layout_marginStart="161dp"
-        android:layout_marginTop="617dp"
-        android:background="@drawable/custom_button"
-        android:text="@string/register_button"
-        android:textAllCaps="false"
-        android:textColor="#ffffff"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            <EditText
+                android:layout_width="350dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="554dp"
+                android:layout_marginEnd="31dp"
+                android:layout_marginBottom="127dp"
+                android:background="@drawable/custom_edit_text"
+                android:hint="@string/confirm_password"
+                android:inputType="textPassword"
+                android:paddingLeft="5dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/btnRegister"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="66dp"
+                android:layout_marginEnd="162dp"
+                android:layout_marginStart="161dp"
+                android:layout_marginTop="617dp"
+                android:background="@drawable/custom_button"
+                android:text="@string/register_button"
+                android:textAllCaps="false"
+                android:textColor="#ffffff"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
