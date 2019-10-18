@@ -1,5 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?><manifest xmlns:android="http://schemas.android.com/apk/res/android"
-package="com.example.medpal">
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.medpal">
+
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <application
         android:allowBackup="true"
@@ -20,34 +23,34 @@ package="com.example.medpal">
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".Register"
-            android:parentActivityName=".MainActivity"></activity>
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".HomePage"
-            android:parentActivityName=".MainActivity"></activity>
-
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".MyPrescriptions"
             android:parentActivityName=".HomePage" />
-
         <activity
             android:name=".MedicineDetails"
             android:parentActivityName=".MyPrescriptions" />
-
         <activity
             android:name=".MedicalRecord"
             android:parentActivityName=".HomePage" />
         <activity
             android:name=".MedicalRecordEdit"
             android:parentActivityName=".MedicalRecord" />
-
         <activity
             android:name=".ImportantContacts"
             android:parentActivityName=".HomePage" />
         <activity
             android:name=".ImportantContactsEdit"
             android:parentActivityName=".ImportantContacts" />
+        <activity
+            android:name=".CentreInformation"
+            android:parentActivityName=".HomePage" />
+        <activity
+            android:name=".Setting"
+            android:parentActivityName=".HomePage" />
     </application>
-
-    <uses-permission android:name="android.permission.CALL_PHONE" />
 
 </manifest>

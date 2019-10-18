@@ -49,10 +49,10 @@ public class HomePage extends AppCompatActivity {
             }
         });
 
-       /* btnMedicalCentres.setOnClickListener(new View.OnClickListener() {
+        btnMedicalCentres.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent medicalCentresIntent = new Intent(HomePage.this, MedicalCentres.class);
+                Intent medicalCentresIntent = new Intent(HomePage.this, CentreInformation.class);
                 startActivity(medicalCentresIntent);
             }
         });
@@ -60,10 +60,10 @@ public class HomePage extends AppCompatActivity {
         btnSettings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent settingsIntent = new Intent(HomePage.this, Settings.class);
+                Intent settingsIntent = new Intent(HomePage.this, Setting.class);
                 startActivity(settingsIntent);
             }
-        });*/
+        });
 
         iBtnHelp.setOnClickListener(new View.OnClickListener() {
             @Override
