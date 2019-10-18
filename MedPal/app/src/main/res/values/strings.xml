@@ -88,36 +88,37 @@
     <string name="tvPrescriptionDetails">Prescription Details</string>
     <string name="tvDoseLabel">Dose</string>
     <string name="tvDose">10mg</string>
-    <string name="tvSideEffectsLabel">Important Contacts</string>
+    <string name="tvSideEffectsLabel">Side Effects</string>
     <string name="tvSideEffects">Nausea</string>
-    <string name="tvPrescribedByLabel">Medical Centres</string>
+    <string name="tvPrescribedByLabel">Prescribed By</string>
     <string name="tvPrescribedBy">Dr DoLittle</string>
     <string name="tvEtcLabel">Settings</string>
     <string name="tvEtc">Ets., Etc.</string>
     <string name="btnOrderMore">Order More</string>
-    <string name="btnCancel">Cancel</string>
+    <string name="btnCancel">Cancel Prescription</string>
     <string name="tvReminders">Reminders</string>
     <string name="tvEightAM">8:00 AM</string>
     <string name="tvOnePM">1:00 PM</string>
     <string name="tvSixPM">6:00 PM</string>
+    <string name="tvNew">Add Reminder</string>
 
-    <!--Medical Centre page    -->
-    <string name="mapImage">Medical centre map</string>
-    <string name="medical_centre_logo">Medical centre logo</string>
-    <string name="medical_centre_name">Medical centre name</string>
+</<!--Medical Centre page    -->
+<string name="mapImage">Medical centre map</string>
+<string name="medical_centre_logo">Medical centre logo</string>
+<string name="medical_centre_name">Medical centre name</string>
 
     <!--Settings page-->
-    <string name="settings_logo">Settings Logo</string>
-    <string name="settingsTitle">Settings</string>
-    <string name="languagesText">Languages :</string>
-    <string name="textSizeText">Text size :</string>
-    <string name="colourThemeText">Colour :</string>
-    <string name="userAvatar">Avatar :</string>
-    <string name="changeAvatar">Change Avatar</string>
-    <string name="cameraIcon">Camera Icon</string>
-    <string name="userEmail">Email :</string>
-    <string name="allowUpdatesText">Allow automatic updates :</string>
-    <string name="appVersionText">App version : 1.0.0</string>
-    <string name="signOutButton">Sign out</string>
-</resources>
+<string name="settings_logo">Settings Logo</string>
+<string name="settingsTitle">Settings</string>
+<string name="languagesText">Languages :</string>
+<string name="textSizeText">Text size :</string>
+<string name="colourThemeText">Colour :</string>
+<string name="userAvatar">Avatar :</string>
+<string name="changeAvatar">Change Avatar</string>
+<string name="cameraIcon">Camera Icon</string>
+<string name="userEmail">Email :</string>
+<string name="allowUpdatesText">Allow automatic updates :</string>
+<string name="appVersionText">App version : 1.0.0</string>
+<string name="signOutButton">Sign out</string>
+    </resources>
 
