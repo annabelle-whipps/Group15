@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- A GuideLine to separate the screen into two ConstraintViews with certain height -->
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.25" />
+
+    <!-- A ConstarintView containing the User image and a message -->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:id="@+id/cVHi"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:background="@color/colorPrimary"
+        app:layout_constraintBottom_toTopOf="@+id/guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <TextView
+            android:id="@+id/tvHi"
+            android:layout_width="166dp"
+            android:layout_height="150dp"
+            android:drawableTop="@mipmap/ic_user_foreground_round"
+            android:text="@string/tvHi"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimaryDark"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:id="@+id/cVButtons"
+        android:layout_width="414dp"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:background="@color/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cVHi">
+
+        <Button
+            android:id="@+id/btnMyPrescriptions"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@color/colorPrimary"
+            android:drawableEnd="@drawable/ic_arrow_btn"
+            android:paddingEnd="10dp"
+            android:paddingStart="10dp"
+            android:text="@string/btnMyPrescriptions"
+            android:textAlignment="textStart"
+            android:textColor="@color/colorPrimaryDark"
+            app:layout_constraintBottom_toTopOf="@+id/btnMedicalRecord"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btnMedicalRecord"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@color/colorPrimary"
+            android:drawableEnd="@drawable/ic_arrow_btn"
+            android:paddingEnd="10dp"
+            android:paddingStart="10dp"
+            android:shadowColor="@color/Button_colour"
+            android:text="@string/btnMedicalRecord"
+            android:textAlignment="textStart"
+            android:textColor="@color/colorPrimaryDark"
+            app:layout_constraintBottom_toTopOf="@+id/btnImportantContacts"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnMyPrescriptions" />
+
+        <Button
+            android:id="@+id/btnImportantContacts"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@color/colorPrimary"
+            android:drawableEnd="@drawable/ic_arrow_btn"
+            android:paddingEnd="10dp"
+            android:paddingStart="10dp"
+            android:text="@string/btnImportantContacts"
+            android:textAlignment="textStart"
+            android:textColor="@color/colorPrimaryDark"
+            app:layout_constraintBottom_toTopOf="@+id/btnMedicalCentres"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnMedicalRecord" />
+
+        <Button
+            android:id="@+id/btnMedicalCentres"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@color/colorPrimary"
+            android:drawableEnd="@drawable/ic_arrow_btn"
+            android:paddingEnd="10dp"
+            android:paddingStart="10dp"
+            android:shadowColor="@color/Button_colour"
+            android:text="@string/btnMedicalCentres"
+            android:textAlignment="textStart"
+            android:textColor="@color/colorPrimaryDark"
+            app:layout_constraintBottom_toTopOf="@+id/btnSettings"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnImportantContacts" />
+
+        <Button
+            android:id="@+id/btnSettings"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@color/colorPrimary"
+            android:drawableEnd="@drawable/ic_arrow_btn"
+            android:paddingEnd="10dp"
+            android:paddingStart="10dp"
+            android:text="@string/btnSettings"
+            android:textAlignment="textStart"
+            android:textColor="@color/colorPrimaryDark"
+            app:layout_constraintBottom_toTopOf="@+id/ibtnHelp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnMedicalCentres" />
+
+        <!--<Button
+                    android:id="@+id/btnHelp"
+                    android:layout_width="404dp"
+                    android:layout_height="175dp"
+                    android:background="@color/colorPrimary"
+                    android:drawableRight="@mipmap/ic_btn_sod_foreground"
+                    android:shadowColor="@color/Button_colour"
+                    android:text="@string/btnHelp"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/colorPrimaryDark"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/btnSettings"
+                    app:layout_constraintVertical_bias="0.0" />-->
+
+
+        <ImageButton
+            android:id="@+id/ibtnHelp"
+            android:layout_width="match_parent"
+            android:layout_height="125dp"
+            android:background="@color/colorPrimary"
+            android:contentDescription="@string/btnHelp"
+            android:drawableEnd="@mipmap/ic_btn_sos_foreground"
+            android:shadowColor="@color/Button_colour"
+            android:textColor="@color/colorPrimaryDark"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnSettings"
+            app:layout_constraintVertical_bias="1.0"
+            app:srcCompat="@mipmap/ic_btn_sos_foreground" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/barrier2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="left" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

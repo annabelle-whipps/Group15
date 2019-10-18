@@ -60,4 +60,13 @@
     <string name="ecAddress">71 Farmers Hall   AB25 1XF Aberdeen</string>
     <string name="ecGPS">Get directions</string>
     <string name="gpEdit2">Edit details</string>
+
+    <!--Home Page   -->
+    <string name="tvHi">Hi, David</string>
+    <string name="btnMyPrescriptions">My Prescriptions</string>
+    <string name="btnMedicalRecord">Medical Record</string>
+    <string name="btnImportantContacts">Important Contacts</string>
+    <string name="btnMedicalCentres">Medical Centres</string>
+    <string name="btnSettings">Settings</string>
+    <string name="btnHelp">HELP!</string>
 </resources>
