@@ -9,17 +9,24 @@
         android:roundIcon="@mipmap/logo1_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".HomePage"></activity>
-        <activity android:name=".MedicalRecord" />
-        <activity android:name=".ImportantContacts" />
-        <activity android:name=".Register" />
-        <activity android:name=".LogIn" />
+        <activity android:name=".LogIn"
+        android:parentActivityName=".MainActivity">
+        </activity>
+        <activity android:name=".Register"
+        android:parentActivityName=".MainActivity">
+        </activity>
+        <activity android:name=".MedicalRecord">
+        </activity>
         <activity android:name=".MainActivity">
+        </activity>
+        <activity android:name=".ImportantContacts">
+        </activity>
+        <activity android:name=".ImportantContactsEdit" android:parentActivityName="com.example.medpal.ImportantContacts">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
         </activity>
     </application>
     <uses-permission android:name="android.permission.CALL_PHONE" />
