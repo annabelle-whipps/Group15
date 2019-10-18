@@ -9,10 +9,8 @@
         android:roundIcon="@mipmap/logo1_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".HomePage"></activity>
-        <activity android:name=".MedicalRecord" />
-        <activity android:name=".ImportantContacts" />
-        <activity android:name=".Register" />
+        <activity android:name=".MedicalRecord"></activity>
+        <activity android:name=".Register"></activity>
         <activity android:name=".LogIn" />
         <activity android:name=".MainActivity">
             <intent-filter>
@@ -22,6 +20,5 @@
             </intent-filter>
         </activity>
     </application>
-    <uses-permission android:name="android.permission.CALL_PHONE" />
 
 </manifest>
