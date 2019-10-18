@@ -25,13 +25,13 @@ public class HomePage extends AppCompatActivity {
 
         // add onClick listeners to the buttons
 
-        /*btnMyPrescriptions.setOnClickListener(new View.OnClickListener() {
+        btnMyPrescriptions.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent myPrescriptionsIntent = new Intent(HomePage.this, MyPrescriptions.class);
                 startActivity(myPrescriptionsIntent);
             }
-        });*/
+        });
 
         btnMedicalRecord.setOnClickListener(new View.OnClickListener() {
             @Override

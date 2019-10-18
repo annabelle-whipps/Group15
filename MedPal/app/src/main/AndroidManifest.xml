@@ -9,26 +9,33 @@
         android:roundIcon="@mipmap/logo1_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LogIn"
-        android:parentActivityName=".MainActivity">
-        </activity>
-        <activity android:name=".Register"
-        android:parentActivityName=".MainActivity">
-        </activity>
-        <activity android:name=".MedicalRecord">
-        </activity>
+        <activity android:name=".MedicineDetails"></activity>
         <activity android:name=".MainActivity">
-        </activity>
-        <activity android:name=".ImportantContacts">
-        </activity>
-        <activity android:name=".ImportantContactsEdit" android:parentActivityName="com.example.medpal.ImportantContacts">
             <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
+        <activity
+            android:name=".LogIn"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".Register"
+            android:parentActivityName=".MainActivity"></activity>
+        <activity
+            android:name=".HomePage"
+            android:parentActivityName=".MainActivity"></activity>
+        <activity android:name=".MyPrescriptions" />
+        <activity android:name=".MedicalRecord" />
+        <activity
+            android:name=".ImportantContacts"
+            android:parentActivityName=".HomePage" />
+        <activity
+            android:name=".ImportantContactsEdit"
+            android:parentActivityName=".ImportantContacts"></activity>
     </application>
+
     <uses-permission android:name="android.permission.CALL_PHONE" />
 
 </manifest>
