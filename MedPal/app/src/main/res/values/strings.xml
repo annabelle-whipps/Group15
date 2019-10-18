@@ -88,17 +88,18 @@
     <string name="tvPrescriptionDetails">Prescription Details</string>
     <string name="tvDoseLabel">Dose</string>
     <string name="tvDose">10mg</string>
-    <string name="tvSideEffectsLabel">Important Contacts</string>
+    <string name="tvSideEffectsLabel">Side Effects</string>
     <string name="tvSideEffects">Nausea</string>
-    <string name="tvPrescribedByLabel">Medical Centres</string>
+    <string name="tvPrescribedByLabel">Prescribed By</string>
     <string name="tvPrescribedBy">Dr DoLittle</string>
     <string name="tvEtcLabel">Settings</string>
     <string name="tvEtc">Ets., Etc.</string>
     <string name="btnOrderMore">Order More</string>
-    <string name="btnCancel">Cancel</string>
+    <string name="btnCancel">Cancel Prescription</string>
     <string name="tvReminders">Reminders</string>
     <string name="tvEightAM">8:00 AM</string>
     <string name="tvOnePM">1:00 PM</string>
     <string name="tvSixPM">6:00 PM</string>
+    <string name="tvNew">Add Reminder</string>
 </resources>
 
