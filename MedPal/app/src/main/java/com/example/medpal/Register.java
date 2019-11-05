@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 public class Register extends AppCompatActivity {
@@ -19,7 +20,7 @@ public class Register extends AppCompatActivity {
 
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) { 
+            public void onClick(View v) {
                 Intent homePageIntent = new Intent(Register.this, HomePage.class);
                 startActivity(homePageIntent);
                 Toast.makeText(Register.this, "Registration Successful", Toast.LENGTH_SHORT).show();
