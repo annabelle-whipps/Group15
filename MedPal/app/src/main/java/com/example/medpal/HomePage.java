@@ -85,7 +85,7 @@ public class HomePage extends AppCompatActivity {
         // create the Intent with the action to dial
         Intent intent = new Intent(Intent.ACTION_DIAL);
         // set the data to the phone number
-        intent.setData(Uri.parse("tel:+0000000000"));
+        intent.setData(Uri.parse("tel:112"));
 
         // check the intent can be resolved by the device
         if (intent.resolveActivity(getPackageManager()) != null) {
