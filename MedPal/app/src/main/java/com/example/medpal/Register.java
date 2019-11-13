@@ -11,19 +11,48 @@ import android.widget.Toast;
 
 public class Register extends AppCompatActivity {
 
+    EditText regUsername, regPhone, regPassword, conPassword;
+    Button btnRegister;
+
+    DatabaseRegistration dbReg;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        Button btnRegister = findViewById(R.id.btnRegister);
+        //Edit Text
+        regUsername = (EditText)findViewById(R.id.registerUserName);
+        regPhone = (EditText)findViewById(R.id.regPhone);
+        regPassword = (EditText)findViewById(R.id.regPassword);
+        conPassword = (EditText)findViewById(R.id.regConfirmPass);
+
+        //Button
+        btnRegister = (Button) findViewById(R.id.btnRegister);
 
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent homePageIntent = new Intent(Register.this, HomePage.class);
-                startActivity(homePageIntent);
-                Toast.makeText(Register.this, "Registration Successful", Toast.LENGTH_SHORT).show();
+                String stringUsername = regUsername.getText().toString();
+                String stringPhone = regPhone.getText().toString();
+                String stringPassword = regPassword.getText().toString();
+                String stringConPassword = conPassword.getText().toString();
+                if (stringUsername.equals("")||stringPhone.equals("")||stringPassword.equals("")||stringConPassword.equals("")) {
+                    Toast.makeText(Register.this,"Please enter registration details", Toast.LENGTH_SHORT).show();
+                } else {
+                    if (stringPassword.equals(stringConPassword)) {
+                        Boolean checkUsername = dbReg.checkUsername(stringUsername);
+                        if (checkUsername == true) {
+                            Boolean insertUserData = dbReg.insertUserData(stringUsername, stringPhone, stringPassword, stringConPassword);
+                            if (insertUserData == true) {
+                                Intent homePageIntent = new Intent(Register.this, HomePage.class);
+                                startActivity(homePageIntent);
+                                Toast.makeText(Register.this, "Registration successful!", Toast.LENGTH_SHORT).show();
+                            }
+
+                        }
+                    }
+                }
             }
         });
     }

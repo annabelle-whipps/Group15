@@ -29,3 +29,12 @@ dependencies {
     implementation 'com.android.support:design:29.0.0'
     implementation "com.android.support:recyclerview-v7:29.0.0"
 }
+
+dependencies {
+    // others
+    def room_version = "2.2.1"
+    implementation "androidx.room:room-runtime:$room_version"
+    annotationProcessor "androidx.room:room-compiler:$room_version"
+    // Test helpers
+    testImplementation "androidx.room:room-testing:$room_version"
+}
