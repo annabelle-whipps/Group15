@@ -27,6 +27,8 @@ public class Register extends AppCompatActivity {
         regPassword = (EditText)findViewById(R.id.regPassword);
         conPassword = (EditText)findViewById(R.id.regConfirmPass);
 
+        dbReg = new DatabaseRegistration(Register.this);
+
         //Button
         btnRegister = (Button) findViewById(R.id.btnRegister);
 

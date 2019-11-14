@@ -25,6 +25,8 @@ public class LogIn extends AppCompatActivity {
         log_in_username = (EditText)findViewById(R.id.editTextUsername);
         log_in_password = (EditText)findViewById(R.id.editTextPassword);
 
+        dbReg = new DatabaseRegistration(LogIn.this);
+
         btnSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -32,6 +34,8 @@ public class LogIn extends AppCompatActivity {
                 String logInPassword = log_in_password.getText().toString();
                 Boolean checkLoginDetails = dbReg.checkLoginDetails(logInUsername, logInPassword);
                 if (checkLoginDetails == true) {
+                    Intent homePageIntent = new Intent(LogIn.this, HomePage.class);
+                    startActivity(homePageIntent);
                     Toast.makeText(LogIn.this, "Login Successful", Toast.LENGTH_SHORT).show();
                 } else {
                     if(checkLoginDetails == false) {
