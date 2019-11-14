@@ -14,7 +14,7 @@ public class Register extends AppCompatActivity {
     EditText regUsername, regPhone, regPassword, conPassword;
     Button btnRegister;
 
-    DatabaseRegistration dbReg;
+    MedPalDatabase db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +27,7 @@ public class Register extends AppCompatActivity {
         regPassword = (EditText)findViewById(R.id.regPassword);
         conPassword = (EditText)findViewById(R.id.regConfirmPass);
 
-        dbReg = new DatabaseRegistration(Register.this);
+        db = new MedPalDatabase(Register.this);
 
         //Button
         btnRegister = (Button) findViewById(R.id.btnRegister);
@@ -43,9 +43,9 @@ public class Register extends AppCompatActivity {
                     Toast.makeText(Register.this,"Please enter registration details", Toast.LENGTH_SHORT).show();
                 } else {
                     if (stringPassword.equals(stringConPassword)) {
-                        Boolean checkUsername = dbReg.checkUsername(stringUsername);
+                        Boolean checkUsername = db.checkUsername(stringUsername);
                         if (checkUsername == true) {
-                            Boolean insertUserData = dbReg.insertUserData(stringUsername, stringPhone, stringPassword, stringConPassword);
+                            Boolean insertUserData = db.insertUserData(stringUsername, stringPhone, stringPassword, stringConPassword);
                             if (insertUserData == true) {
                                 Intent homePageIntent = new Intent(Register.this, HomePage.class);
                                 startActivity(homePageIntent);

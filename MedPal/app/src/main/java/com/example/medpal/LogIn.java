@@ -14,7 +14,7 @@ public class LogIn extends AppCompatActivity {
     Button btnSignIn;
     EditText log_in_username, log_in_password;
 
-    DatabaseRegistration dbReg;
+    MedPalDatabase db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,14 +25,14 @@ public class LogIn extends AppCompatActivity {
         log_in_username = (EditText)findViewById(R.id.editTextUsername);
         log_in_password = (EditText)findViewById(R.id.editTextPassword);
 
-        dbReg = new DatabaseRegistration(LogIn.this);
+        db = new MedPalDatabase(LogIn.this);
 
         btnSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String logInUsername = log_in_username.getText().toString();
                 String logInPassword = log_in_password.getText().toString();
-                Boolean checkLoginDetails = dbReg.checkLoginDetails(logInUsername, logInPassword);
+                Boolean checkLoginDetails = db.checkLoginDetails(logInUsername, logInPassword);
                 if (checkLoginDetails == true) {
                     Intent homePageIntent = new Intent(LogIn.this, HomePage.class);
                     startActivity(homePageIntent);

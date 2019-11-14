@@ -6,20 +6,25 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-public class DatabaseRegistration extends SQLiteOpenHelper {
-    public DatabaseRegistration(Context context) {
-        super(context, "Register.db", null, 1);
+public class MedPalDatabase extends SQLiteOpenHelper {
+
+    public MedPalDatabase(Context context) {
+        super(context, "MedPal.db", null, 1);
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("Create table user(username text primary key, phone text, password text, conPassword text)");
-
+        db.execSQL("Create table contacts(number text primary key, name text)");
+        db.execSQL("Create table medicine(medicineID interger primary key, name text)");
     }
+
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("drop table if exists user");
+        db.execSQL("drop table if exists contacts");
+        db.execSQL("drop table if exists medicine");
     }
 
     //Inserting data into the table user
