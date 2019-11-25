@@ -30,6 +30,59 @@ public class ImportantContacts extends AppCompatActivity {
         getSupportActionBar().setLogo(R.mipmap.logo1_foreground);
         getSupportActionBar().setDisplayUseLogoEnabled(true);
 
+        fillingLabelsFromDatabase();
+
+        addImplicitIntent();
+
+    }
+
+    private void fillingLabelsFromDatabase() {
+        db = new MedPalDatabase(ImportantContacts.this);
+
+        db.insertPractitionerData("Dolittle","+44 1234 5678 89","9 rue du soleil levant Houdan","dolittle@gmail.uk");
+        db.insertEmergencyContactData("Kate Williams","+44 9876 5432 100","6 rue des clos ribauds Bessancourt","mother@gmail.uk");
+
+        TextView gpPhone = findViewById(R.id.gpPhone);
+        TextView gpMailLabel = findViewById(R.id.gpMailLabel);
+        TextView gpAddress = findViewById(R.id.gpAddress);
+        TextView gpName = findViewById(R.id.gpName);
+        TextView ecPhone = findViewById(R.id.ecPhone);
+        TextView ecAddress = findViewById(R.id.ecAddress);
+        TextView ecMailLabel = findViewById(R.id.ecMailLabel);
+        TextView ecRelation = findViewById(R.id.ecRelation);
+        TextView ecName = findViewById(R.id.ecName);
+
+        Contact practitioner = db.retrievePractitioner();
+        Contact ec = db.retrieveEmergencyContact();
+
+        if(practitioner != null){
+            gpPhone.setText(practitioner.getNumber());
+            gpAddress.setText(practitioner.getAddress());
+            gpMailLabel.setText(practitioner.getEmail());
+            gpName.setText("Dr. "+practitioner.getName());
+        } else {
+            gpPhone.setText(NOT_FILLED);
+            gpAddress.setText(NOT_FILLED);
+            gpMailLabel.setText(NOT_FILLED);
+            gpName.setText(NOT_FILLED);
+        }
+
+        if(ec != null){
+            ecPhone.setText(ec.getNumber());
+            ecAddress.setText(ec.getAddress());
+            ecMailLabel.setText(ec.getEmail());
+            ecName.setText(ec.getName());
+            ecRelation.setText(ec.getRelation());
+        } else {
+            ecPhone.setText(NOT_FILLED);
+            ecAddress.setText(NOT_FILLED);
+            ecMailLabel.setText(NOT_FILLED);
+            ecName.setText(NOT_FILLED);
+            ecRelation.setText(NOT_FILLED);
+        }
+    }
+
+    private void addImplicitIntent() {
         Button btnEdit = findViewById(R.id.btnEdit);
         final Button gpCall = findViewById(R.id.gpCall);
         Button gpMail = findViewById(R.id.gpMail);
@@ -37,9 +90,6 @@ public class ImportantContacts extends AppCompatActivity {
         Button ecCall = findViewById(R.id.ecCall);
         Button ecMail = findViewById(R.id.ecMail);
         Button ecAddress = findViewById(R.id.ecGPS);
-
-        fillingLabelsFromDatabase();
-
 
         btnEdit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -132,53 +182,6 @@ public class ImportantContacts extends AppCompatActivity {
 
             }
         });
-
-    }
-
-    private void fillingLabelsFromDatabase() {
-        db = new MedPalDatabase(ImportantContacts.this);
-
-        db.insertPractitionerData("Dolittle","+44 1234 5678 89","9 rue du soleil levant Houdan","dolittle@gmail.uk");
-        db.insertEmergencyContactData("Kate Williams","+44 9876 5432 100","6 rue des clos ribauds Bessancourt","mother@gmail.uk");
-
-        TextView gpPhone = findViewById(R.id.gpPhone);
-        TextView gpMailLabel = findViewById(R.id.gpMailLabel);
-        TextView gpAddress = findViewById(R.id.gpAddress);
-        TextView gpName = findViewById(R.id.gpName);
-        TextView ecPhone = findViewById(R.id.ecPhone);
-        TextView ecAddress = findViewById(R.id.ecAddress);
-        TextView ecMailLabel = findViewById(R.id.ecMailLabel);
-        TextView ecRelation = findViewById(R.id.ecRelation);
-        TextView ecName = findViewById(R.id.ecName);
-
-        Contact practitioner = db.retrievePractitioner();
-        Contact ec = db.retrieveEmergencyContact();
-
-        if(practitioner != null){
-            gpPhone.setText(practitioner.getNumber());
-            gpAddress.setText(practitioner.getAddress());
-            gpMailLabel.setText(practitioner.getEmail());
-            gpName.setText("Dr. "+practitioner.getName());
-        } else {
-            gpPhone.setText(NOT_FILLED);
-            gpAddress.setText(NOT_FILLED);
-            gpMailLabel.setText(NOT_FILLED);
-            gpName.setText(NOT_FILLED);
-        }
-
-        if(ec != null){
-            ecPhone.setText(ec.getNumber());
-            ecAddress.setText(ec.getAddress());
-            ecMailLabel.setText(ec.getEmail());
-            ecName.setText(ec.getName());
-            ecRelation.setText(ec.getRelation());
-        } else {
-            ecPhone.setText(NOT_FILLED);
-            ecAddress.setText(NOT_FILLED);
-            ecMailLabel.setText(NOT_FILLED);
-            ecName.setText(NOT_FILLED);
-            ecRelation.setText(NOT_FILLED);
-        }
     }
 
     /**
@@ -194,6 +197,10 @@ public class ImportantContacts extends AppCompatActivity {
         }
     }
 
+    /**
+     * Method that launches the mail app of the phone
+     * @param email destination email
+     */
     private void launchEmail(String email) {
         Intent intent = new Intent(Intent.ACTION_SENDTO);
         // set the MIME time
@@ -212,6 +219,10 @@ public class ImportantContacts extends AppCompatActivity {
 
     }
 
+    /**
+     * Method that launches the map app of the phone
+     * @param address address to set the GPS to
+     */
     private void launchMap(String address) {
         Intent intent = new Intent(Intent.ACTION_VIEW);
         intent.setData(Uri.parse("geo:0,0?q="+address));
