@@ -46,8 +46,7 @@
             android:name=".ImportantContacts"
             android:parentActivityName=".HomePage" />
         <activity
-            android:name=".ImportantContactsEdit"
-            android:parentActivityName=".ImportantContacts" />
+            android:name=".ImportantContactsEdit" />
         <activity
             android:name=".CentreInformation"
             android:parentActivityName=".HomePage" />
