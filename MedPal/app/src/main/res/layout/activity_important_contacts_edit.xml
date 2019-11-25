@@ -89,6 +89,7 @@
                         android:layout_height="match_parent"
                         android:text="@string/gpPhone"
                         android:inputType="phone"
+                        android:digits="0123456789+"
                         android:textSize="20dp"
                         android:layout_weight="1"
                         android:textColor="@color/colorPrimary"
@@ -241,6 +242,7 @@
                             android:layout_weight="1"
                             android:inputType="phone"
                             android:gravity="center"
+                            android:digits="0123456789+"
                             android:text="@string/ecPhone"
                             android:textColor="@color/colorPrimary"
                             android:textSize="20dp" />

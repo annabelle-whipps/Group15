@@ -61,7 +61,6 @@
                             android:id="@+id/gpName"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:text="@string/gpName"
                             android:textColor="@color/colorPrimary"
                             android:textSize="20dp"
                             android:gravity="center"/>
@@ -76,7 +75,6 @@
                         android:id="@+id/gpPhone"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:text="@string/gpPhone"
                         android:textSize="20dp"
                         android:layout_weight="1"
                         android:textColor="@color/colorPrimary"
@@ -103,7 +101,6 @@
                         android:id="@+id/gpMailLabel"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:text="@string/gpMailLabel"
                         android:textSize="20dp"
                         android:layout_weight="1"
                         android:textColor="@color/colorPrimary"
@@ -130,7 +127,6 @@
                             android:id="@+id/gpAddress"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:text="@string/gpAddress"
                             android:textSize="15dp"
                             android:textColor="@color/colorPrimary"
                             android:gravity="center"
@@ -196,7 +192,6 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:gravity="center"
-                                    android:text="@string/ecName"
                                     android:textColor="@color/colorPrimary"
                                     android:textSize="20dp"
                                     android:layout_weight="1"/>
@@ -206,7 +201,6 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:gravity="center"
-                                    android:text="@string/ecRelation"
                                     android:textStyle="italic"
                                     android:textColor="@color/colorPrimary"
                                     android:textSize="20dp"
@@ -228,7 +222,6 @@
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:gravity="center"
-                            android:text="@string/ecPhone"
                             android:textColor="@color/colorPrimary"
                             android:textSize="20dp" />
 
@@ -244,7 +237,31 @@
                             android:textColor="@color/colorPrimaryDark" />
 
                     </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="15dp">
+                        <TextView
+                            android:id="@+id/ecMailLabel"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:textSize="20dp"
+                            android:layout_weight="1"
+                            android:textColor="@color/colorPrimary"
+                            android:gravity="center"/>
+                        <Button
+                            android:id="@+id/ecMail"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="@string/gpMail"
+                            android:layout_marginRight="15dp"
+                            android:layout_marginLeft="15dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/button_border_light"
+                            android:textColor="@color/colorPrimaryDark"/>
 
+                    </LinearLayout>
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -255,7 +272,6 @@
                             android:id="@+id/ecAddress"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:text="@string/ecAddress"
                             android:textSize="15dp"
                             android:textColor="@color/colorPrimary"
                             android:gravity="center"

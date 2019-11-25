@@ -15,7 +15,8 @@ public class MedPalDatabase extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("Create table user(username text primary key, phone text, password text, conPassword text)");
-        db.execSQL("Create table contacts(number text primary key, name text)");
+        db.execSQL("Create table practitioner(practitionerNumber text primary key, practitionerName text, practitionerEmail text, practitionerAddress text)");
+        db.execSQL("Create table emergencyContact(contactNumber text primary key, contactName text, contactEmail text, contactAddress text,contactRelation text)");
         db.execSQL("Create table medicine(medicineID interger primary key, name text)");
     }
 
@@ -23,7 +24,8 @@ public class MedPalDatabase extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("drop table if exists user");
-        db.execSQL("drop table if exists contacts");
+        db.execSQL("drop table if exists practitioner");
+        db.execSQL("drop table if exists emergencyContact");
         db.execSQL("drop table if exists medicine");
     }
 
@@ -54,4 +56,62 @@ public class MedPalDatabase extends SQLiteOpenHelper {
         else return false;
     }
 
+    public Contact retrievePractitioner() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("Select practitionerNumber,practitionerName,practitionerEmail,practitionerAddress from practitioner",null);
+        if(cursor != null && cursor.moveToFirst()){
+            String practitionerName = cursor.getString(cursor.getColumnIndex("practitionerName"));
+            String practitionerNumber = cursor.getString(cursor.getColumnIndex("practitionerNumber"));
+            String practitionerEmail = cursor.getString(cursor.getColumnIndex("practitionerEmail"));
+            String practitionerAddress = cursor.getString(cursor.getColumnIndex("practitionerAddress"));
+
+            return new Contact(practitionerName,practitionerNumber,practitionerEmail,practitionerAddress);
+        } else {
+            return null;
+        }
+    }
+
+    public Contact retrieveEmergencyContact() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("Select contactNumber,contactName,contactEmail,contactAddress,contactRelation from emergencyContact",null);
+        if(cursor != null && cursor.moveToFirst()){
+            String contactNumber = cursor.getString(cursor.getColumnIndex("contactNumber"));
+            String contactName = cursor.getString(cursor.getColumnIndex("contactName"));
+            String contactEmail = cursor.getString(cursor.getColumnIndex("contactEmail"));
+            String contactAddress = cursor.getString(cursor.getColumnIndex("contactAddress"));
+            String contactRelation = cursor.getString(cursor.getColumnIndex("contactRelation"));
+
+            return new Contact(contactName,contactNumber,contactEmail,contactAddress,contactRelation);
+        } else {
+            return null;
+        }
+    }
+
+    //Inserting data into the table practitioner
+    public boolean insertPractitionerData(String practitionerName, String practitionerNumber, String practitionerAddress, String practitionerEmail) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL("DELETE from practitioner");
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("practitionerNumber", practitionerNumber);
+        contentValues.put("practitionerName", practitionerName);
+        contentValues.put("practitionerAddress", practitionerAddress);
+        contentValues.put("practitionerEmail", practitionerEmail);
+        long insertValues = db.insert("practitioner", null, contentValues);
+        if (insertValues == -1) return false;
+        else return true;
+    }
+
+    public boolean insertEmergencyContactData(String contactName, String contactNumber, String contactAddress, String contactEmail) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL("DELETE from emergencyContact");
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("contactName", contactName);
+        contentValues.put("contactNumber", contactNumber);
+        contentValues.put("contactAddress", contactAddress);
+        contentValues.put("contactEmail", contactEmail);
+        contentValues.put("contactRelation", "Mother");
+        long insertValues = db.insert("emergencyContact", null, contentValues);
+        if (insertValues == -1) return false;
+        else return true;
+    }
 }
