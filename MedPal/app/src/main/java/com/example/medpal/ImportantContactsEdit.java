@@ -3,8 +3,12 @@ package com.example.medpal;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -23,6 +27,29 @@ public class ImportantContactsEdit extends AppCompatActivity {
         getSupportActionBar().setDisplayUseLogoEnabled(true);
 
         fillingLabelsFromDatabase();
+
+        Button btnUpdate = findViewById(R.id.btnUpdate);
+
+        btnUpdate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                EditText gpPhone = findViewById(R.id.gpPhone);
+                EditText gpMail = findViewById(R.id.gpMail);
+                EditText gpAddress = findViewById(R.id.gpAddress);
+                EditText gpName = findViewById(R.id.gpName);
+                EditText ecPhone = findViewById(R.id.ecPhone);
+                EditText ecAddress = findViewById(R.id.ecAddress);
+                EditText ecMail = findViewById(R.id.ecMail);
+                EditText ecRelation = findViewById(R.id.ecRelation);
+                EditText ecName = findViewById(R.id.ecName);
+
+                db.insertPractitionerData(gpName.getText().toString(),gpPhone.getText().toString(),gpAddress.getText().toString(),gpMail.getText().toString());
+                db.insertEmergencyContactData(ecName.getText().toString(),ecPhone.getText().toString(),ecAddress.getText().toString(),ecMail.getText().toString(),ecRelation.getText().toString());
+
+                finish();
+            }
+        });
     }
 
     private void fillingLabelsFromDatabase() {

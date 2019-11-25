@@ -5,6 +5,9 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
+
+import androidx.room.Delete;
 
 public class MedPalDatabase extends SQLiteOpenHelper {
 
@@ -90,7 +93,7 @@ public class MedPalDatabase extends SQLiteOpenHelper {
     //Inserting data into the table practitioner
     public boolean insertPractitionerData(String practitionerName, String practitionerNumber, String practitionerAddress, String practitionerEmail) {
         SQLiteDatabase db = this.getWritableDatabase();
-        db.execSQL("DELETE from practitioner");
+        db.delete("practitioner",null,null);
         ContentValues contentValues = new ContentValues();
         contentValues.put("practitionerNumber", practitionerNumber);
         contentValues.put("practitionerName", practitionerName);
@@ -101,15 +104,15 @@ public class MedPalDatabase extends SQLiteOpenHelper {
         else return true;
     }
 
-    public boolean insertEmergencyContactData(String contactName, String contactNumber, String contactAddress, String contactEmail) {
+    public boolean insertEmergencyContactData(String contactName, String contactNumber, String contactAddress, String contactEmail,String contactRelation) {
         SQLiteDatabase db = this.getWritableDatabase();
-        db.execSQL("DELETE from emergencyContact");
+        db.delete("emergencyContact",null,null);
         ContentValues contentValues = new ContentValues();
         contentValues.put("contactName", contactName);
         contentValues.put("contactNumber", contactNumber);
         contentValues.put("contactAddress", contactAddress);
         contentValues.put("contactEmail", contactEmail);
-        contentValues.put("contactRelation", "Mother");
+        contentValues.put("contactRelation", contactRelation);
         long insertValues = db.insert("emergencyContact", null, contentValues);
         if (insertValues == -1) return false;
         else return true;

@@ -36,11 +36,14 @@ public class ImportantContacts extends AppCompatActivity {
 
     }
 
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        fillingLabelsFromDatabase();
+    }
+
     private void fillingLabelsFromDatabase() {
         db = new MedPalDatabase(ImportantContacts.this);
-
-        db.insertPractitionerData("Dolittle","+44 1234 5678 89","9 rue du soleil levant Houdan","dolittle@gmail.uk");
-        db.insertEmergencyContactData("Kate Williams","+44 9876 5432 100","6 rue des clos ribauds Bessancourt","mother@gmail.uk");
 
         TextView gpPhone = findViewById(R.id.gpPhone);
         TextView gpMailLabel = findViewById(R.id.gpMailLabel);
