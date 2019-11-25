@@ -1,5 +1,7 @@
 package com.example.medpal;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -25,9 +27,6 @@ public class ImportantContactsEdit extends AppCompatActivity {
 
     private void fillingLabelsFromDatabase() {
         db = new MedPalDatabase(ImportantContactsEdit.this);
-
-        db.insertPractitionerData("Dolittle","+44 1234 5678 89","9 rue du soleil levant Houdan","dolittle@gmail.uk");
-        db.insertEmergencyContactData("Kate Williams","+44 9876 5432 100","6 rue des clos ribauds Bessancourt","mother@gmail.uk");
 
         EditText gpPhone = findViewById(R.id.gpPhone);
         EditText gpMail = findViewById(R.id.gpMail);
@@ -67,5 +66,27 @@ public class ImportantContactsEdit extends AppCompatActivity {
             ecName.setText("");
             ecRelation.setText("");
         }
+    }
+
+    /**
+     * Method to ask confirmation from user if he wants to leave before confirming changes
+     * Taken from https://stackoverflow.com/questions/2257963/how-to-show-a-dialog-to-confirm-that-the-user-wishes-to-exit-an-android-activity/2258147
+     */
+    @Override
+    public void onBackPressed() {
+        new AlertDialog.Builder(this)
+                .setIcon(android.R.drawable.ic_dialog_alert)
+                .setTitle("Leaving")
+                .setMessage("Are you sure you want to leave? Your changes won't be saved !")
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener()
+                {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        finish();
+                    }
+
+                })
+                .setNegativeButton("No", null)
+                .show();
     }
 }
