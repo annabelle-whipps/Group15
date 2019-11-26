@@ -45,14 +45,19 @@ public class Register extends AppCompatActivity {
                     if (stringPassword.equals(stringConPassword)) {
                         Boolean checkUsername = db.checkUsername(stringUsername);
                         if (checkUsername == true) {
-                            Boolean insertUserData = db.insertUserData(stringUsername, stringPhone, stringPassword, stringConPassword);
+                            Boolean insertUserData = db.insertUserData(stringUsername, stringPhone, stringPassword, stringConPassword, "1");
                             if (insertUserData == true) {
                                 Intent homePageIntent = new Intent(Register.this, HomePage.class);
                                 startActivity(homePageIntent);
-                                Toast.makeText(Register.this, "Registration successful!", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(Register.this, "Registration successful", Toast.LENGTH_SHORT).show();
+                                finish();
                             }
 
+                        } else {
+                            Toast.makeText(Register.this, "Username already taken", Toast.LENGTH_SHORT).show();
                         }
+                    } else {
+                        Toast.makeText(Register.this, "Passwords are not matching", Toast.LENGTH_SHORT).show();
                     }
                 }
             }

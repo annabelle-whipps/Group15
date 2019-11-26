@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -33,18 +34,17 @@ public class LogIn extends AppCompatActivity {
                 String logInUsername = log_in_username.getText().toString();
                 String logInPassword = log_in_password.getText().toString();
                 Boolean checkLoginDetails = db.checkLoginDetails(logInUsername, logInPassword);
-                if (checkLoginDetails == true) {
+                if (checkLoginDetails) {
                     Intent homePageIntent = new Intent(LogIn.this, HomePage.class);
                     startActivity(homePageIntent);
                     Toast.makeText(LogIn.this, "Login Successful", Toast.LENGTH_SHORT).show();
+                    db.connectUser(logInUsername);
+                    finish();
                 } else {
-                    if(checkLoginDetails == false) {
                         Toast.makeText(LogIn.this, "Username or Password incorrect", Toast.LENGTH_SHORT).show();
-
-                    }
                 }
-
             }
+
         });
     }
 }

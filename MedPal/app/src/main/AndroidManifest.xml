@@ -28,8 +28,7 @@
             android:name=".Register"
             android:parentActivityName=".MainActivity" />
         <activity
-            android:name=".HomePage"
-            android:parentActivityName=".MainActivity" />
+            android:name=".HomePage" />
         <activity
             android:name=".MyPrescriptions"
             android:parentActivityName=".HomePage" />

@@ -10,6 +10,10 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.List;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 public class ImportantContactsEdit extends AppCompatActivity {
@@ -34,15 +38,31 @@ public class ImportantContactsEdit extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                ArrayList<EditText> inputs = new ArrayList<EditText>();
                 EditText gpPhone = findViewById(R.id.gpPhone);
+                inputs.add(gpPhone);
                 EditText gpMail = findViewById(R.id.gpMail);
+                inputs.add(gpMail);
                 EditText gpAddress = findViewById(R.id.gpAddress);
+                inputs.add(gpAddress);
                 EditText gpName = findViewById(R.id.gpName);
+                inputs.add(gpName);
                 EditText ecPhone = findViewById(R.id.ecPhone);
+                inputs.add(ecPhone);
                 EditText ecAddress = findViewById(R.id.ecAddress);
+                inputs.add(ecAddress);
                 EditText ecMail = findViewById(R.id.ecMail);
+                inputs.add(ecMail);
                 EditText ecRelation = findViewById(R.id.ecRelation);
+                inputs.add(ecRelation);
                 EditText ecName = findViewById(R.id.ecName);
+                inputs.add(ecName);
+
+                for(int i = 0;i<inputs.size();i++){
+                    if(inputs.get(i).getText().toString().equals("")){
+                        inputs.get(i).setText("Not filled");
+                    }
+                }
 
                 db.insertPractitionerData(gpName.getText().toString(),gpPhone.getText().toString(),gpAddress.getText().toString(),gpMail.getText().toString());
                 db.insertEmergencyContactData(ecName.getText().toString(),ecPhone.getText().toString(),ecAddress.getText().toString(),ecMail.getText().toString(),ecRelation.getText().toString());

@@ -2,7 +2,9 @@ package com.example.medpal;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -10,6 +12,7 @@ import android.telephony.TelephonyManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -21,10 +24,14 @@ import com.android.volley.toolbox.Volley;
 
 public class HomePage extends AppCompatActivity {
 
+    MedPalDatabase db;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page);
+
+        db = new MedPalDatabase(HomePage.this);
 
         Button btnMyPrescriptions = findViewById(R.id.btnMyPrescriptions);
         Button btnMedicalRecord = findViewById(R.id.btnMedicalRecord);
@@ -32,6 +39,9 @@ public class HomePage extends AppCompatActivity {
         Button btnMedicalCentres = findViewById(R.id.btnMedicalCentres);
         Button btnSettings = findViewById(R.id.btnSettings);
         ImageButton iBtnHelp = findViewById(R.id.ibtnHelp);
+        TextView tvHi = findViewById(R.id.tvHi);
+
+        tvHi.setText("Welcome "+db.getLoggedUser());
 
         // add onClick listeners to the buttons
 
@@ -154,5 +164,27 @@ public class HomePage extends AppCompatActivity {
         queue.add(stringRequest);
     }
 
+    /**
+     * Method to ask confirmation from user if he wants to log out
+     * Taken from https://stackoverflow.com/questions/2257963/how-to-show-a-dialog-to-confirm-that-the-user-wishes-to-exit-an-android-activity/2258147
+     */
+    @Override
+    public void onBackPressed() {
+        new AlertDialog.Builder(this)
+                .setIcon(android.R.drawable.ic_dialog_alert)
+                .setTitle("Logging out")
+                .setMessage("Are you sure you want to log out?")
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener()
+                {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        finish();
+                        db.disconnectUser();
+                    }
+
+                })
+                .setNegativeButton("No", null)
+                .show();
+    }
 }
 

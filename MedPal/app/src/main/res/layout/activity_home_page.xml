@@ -34,7 +34,7 @@
             android:id="@+id/tvHi"
             android:layout_width="166dp"
             android:layout_height="150dp"
-            android:drawableTop="@mipmap/ic_user_foreground_round"
+            android:drawableTop="@mipmap/profile_pic_foreground"
             android:text="@string/tvHi"
             android:textAlignment="center"
             android:textColor="@color/colorPrimaryDark"

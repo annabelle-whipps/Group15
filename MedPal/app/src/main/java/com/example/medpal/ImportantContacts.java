@@ -18,7 +18,7 @@ import android.widget.Toast;
 public class ImportantContacts extends AppCompatActivity {
 
     MedPalDatabase db;
-    final String NOT_FILLED = "Not filled";
+    public final String NOT_FILLED = "Not filled";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -106,7 +106,7 @@ public class ImportantContacts extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 TextView gpPhone = findViewById(R.id.gpPhone);
-                if(gpPhone.getText().toString() != NOT_FILLED){
+                if(!gpPhone.getText().toString().equals(NOT_FILLED)){
                     dialPhoneNumber(gpPhone.getText().toString());
                 } else {
                     Toast toast = Toast.makeText(getApplicationContext(),"There is no number filled !",Toast.LENGTH_SHORT);
@@ -120,7 +120,7 @@ public class ImportantContacts extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 TextView ecPhone = findViewById(R.id.ecPhone);
-                if(ecPhone.getText().toString() != NOT_FILLED){
+                if(!ecPhone.getText().toString().equals(NOT_FILLED)){
                     dialPhoneNumber(ecPhone.getText().toString());
                 } else {
                     Toast toast = Toast.makeText(getApplicationContext(),"There is no number filled !",Toast.LENGTH_SHORT);
@@ -134,7 +134,7 @@ public class ImportantContacts extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 TextView ecMail = findViewById(R.id.ecMailLabel);
-                if(ecMail.getText().toString() != NOT_FILLED){
+                if(!ecMail.getText().toString().equals(NOT_FILLED)){
                     launchEmail(ecMail.getText().toString());
                 } else {
                     Toast toast = Toast.makeText(getApplicationContext(),"There is no email filled !",Toast.LENGTH_SHORT);
@@ -148,7 +148,7 @@ public class ImportantContacts extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 TextView gpMail = findViewById(R.id.gpMailLabel);
-                if(gpMail.getText().toString() != NOT_FILLED){
+                if(!gpMail.getText().toString().equals(NOT_FILLED)){
                     launchEmail(gpMail.getText().toString());
                 } else {
                     Toast toast = Toast.makeText(getApplicationContext(),"There is no email filled !",Toast.LENGTH_SHORT);
@@ -162,7 +162,7 @@ public class ImportantContacts extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 TextView ecAddress = findViewById(R.id.ecAddress);
-                if(ecAddress.getText().toString() != NOT_FILLED){
+                if(!ecAddress.getText().toString().equals(NOT_FILLED)){
                     launchMap(ecAddress.getText().toString());
                 } else {
                     Toast toast = Toast.makeText(getApplicationContext(),"There is no address filled !",Toast.LENGTH_SHORT);
@@ -176,7 +176,7 @@ public class ImportantContacts extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 TextView gpAddress = findViewById(R.id.gpAddress);
-                if(gpAddress.getText().toString() != NOT_FILLED){
+                if(!gpAddress.getText().toString().equals(NOT_FILLED)){
                     launchMap(gpAddress.getText().toString());
                 } else {
                     Toast toast = Toast.makeText(getApplicationContext(),"There is no address filled !",Toast.LENGTH_SHORT);
