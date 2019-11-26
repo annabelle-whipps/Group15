@@ -8,6 +8,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 import androidx.room.Delete;
+import androidx.room.Update;
 
 public class MedPalDatabase extends SQLiteOpenHelper {
 
@@ -17,7 +18,7 @@ public class MedPalDatabase extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("Create table user(username text primary key, phone text, password text, conPassword text)");
+        db.execSQL("Create table user(username text primary key, phone text, password text, conPassword text, logged text)");
         db.execSQL("Create table practitioner(practitionerNumber text primary key, practitionerName text, practitionerEmail text, practitionerAddress text)");
         db.execSQL("Create table emergencyContact(contactNumber text primary key, contactName text, contactEmail text, contactAddress text,contactRelation text)");
         db.execSQL("Create table medicine(medicineID interger primary key, name text)");
@@ -33,13 +34,14 @@ public class MedPalDatabase extends SQLiteOpenHelper {
     }
 
     //Inserting data into the table user
-    public boolean insertUserData(String username, String phone, String password, String conPassword) {
+    public boolean insertUserData(String username, String phone, String password, String conPassword, String logged) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put("username", username);
         contentValues.put("phone", phone);
         contentValues.put("password", password);
         contentValues.put("conPassword", conPassword);
+        contentValues.put("logged",logged);
         long insertValues = db.insert("user", null, contentValues);
         if (insertValues == -1) return false;
         else return true;
@@ -116,5 +118,26 @@ public class MedPalDatabase extends SQLiteOpenHelper {
         long insertValues = db.insert("emergencyContact", null, contentValues);
         if (insertValues == -1) return false;
         else return true;
+    }
+
+    public void connectUser(String logInUsername) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("logged", "1");
+        db.update("user",contentValues,"username = ?",new String[]{logInUsername});
+    }
+
+    public void disconnectUser() {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("logged", "0");
+        db.update("user",contentValues,null,null);
+    }
+
+    public String getLoggedUser() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("Select username from user where logged='1'",null);
+        cursor.moveToFirst();
+        return cursor.getString(cursor.getColumnIndex("username"));
     }
 }
