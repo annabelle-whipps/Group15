@@ -39,7 +39,6 @@ public class LogIn extends AppCompatActivity {
                     startActivity(homePageIntent);
                     Toast.makeText(LogIn.this, "Login Successful", Toast.LENGTH_SHORT).show();
                     db.connectUser(logInUsername);
-                    Log.e("EHOOOOOOOO","EHOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO");
                     finish();
                 } else {
                         Toast.makeText(LogIn.this, "Username or Password incorrect", Toast.LENGTH_SHORT).show();
