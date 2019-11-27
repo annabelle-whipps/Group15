@@ -1,12 +1,19 @@
 package com.example.medpal;
 
 public class User {
+    private Integer id;
     private String name;
     private String phone;
     private String password;
     private String logged;
 
+    public Integer getId() {
+        return id;
+    }
 
+    public void setId(Integer id){
+
+    }
     public String getName(){
 
         return name;
