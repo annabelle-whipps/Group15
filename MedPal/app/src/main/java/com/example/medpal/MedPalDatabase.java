@@ -39,7 +39,6 @@ public class MedPalDatabase extends SQLiteOpenHelper {
     public boolean insertUserData(String username, String phone, String password, String conPassword, String logged) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put("user_id", username);
         contentValues.put("username", username);
         contentValues.put("phone", phone);
         contentValues.put("password", password);
@@ -139,17 +138,15 @@ public class MedPalDatabase extends SQLiteOpenHelper {
     public void disconnectUser() {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-
         contentValues.put("logged", "0");
         db.update("user", contentValues, null, null);
     }
 
     public String getLoggedUser() {
-
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery("Select username from user where logged='1'", null);
         cursor.moveToFirst();
-        return null;
+        return cursor.getString(cursor.getColumnIndex("username"));
     }
 
 }
