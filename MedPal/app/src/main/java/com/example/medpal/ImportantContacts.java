@@ -36,12 +36,16 @@ public class ImportantContacts extends AppCompatActivity {
 
     }
 
+    //To make sure the labels are updated are the user edited the details
     @Override
     protected void onRestart() {
         super.onRestart();
         fillingLabelsFromDatabase();
     }
 
+    /**
+     * Method to retrieve the contact details from the database and insert them into the TextViews
+     */
     private void fillingLabelsFromDatabase() {
         db = new MedPalDatabase(ImportantContacts.this);
 
@@ -85,6 +89,9 @@ public class ImportantContacts extends AppCompatActivity {
         }
     }
 
+    /**
+     * This method will add implicit intents on every button, with a verification in case the detail is not filled.
+     */
     private void addImplicitIntent() {
         Button btnEdit = findViewById(R.id.btnEdit);
         final Button gpCall = findViewById(R.id.gpCall);

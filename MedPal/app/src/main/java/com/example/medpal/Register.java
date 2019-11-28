@@ -39,28 +39,40 @@ public class Register extends AppCompatActivity {
                 String stringPhone = regPhone.getText().toString();
                 String stringPassword = regPassword.getText().toString();
                 String stringConPassword = conPassword.getText().toString();
-                if (stringUsername.equals("")||stringPhone.equals("")||stringPassword.equals("")||stringConPassword.equals("")) {
-                    Toast.makeText(Register.this,"Please enter registration details", Toast.LENGTH_SHORT).show();
-                } else {
-                    if (stringPassword.equals(stringConPassword)) {
-                        Boolean checkUsername = db.checkUsername(stringUsername);
-                        if (checkUsername == true) {
-                            Boolean insertUserData = db.insertUserData(stringUsername, stringPhone, stringPassword, stringConPassword, "1");
-                            if (insertUserData == true) {
-                                Intent homePageIntent = new Intent(Register.this, HomePage.class);
-                                startActivity(homePageIntent);
-                                Toast.makeText(Register.this, "Registration successful", Toast.LENGTH_SHORT).show();
-                                finish();
-                            }
-
-                        } else {
-                            Toast.makeText(Register.this, "Username already taken", Toast.LENGTH_SHORT).show();
-                        }
-                    } else {
-                        Toast.makeText(Register.this, "Passwords are not matching", Toast.LENGTH_SHORT).show();
-                    }
-                }
+                registerUser(stringUsername, stringPhone, stringPassword, stringConPassword);
             }
         });
+    }
+
+    /**
+     * Method to register a new user in the database, while checking that the username is not taken and the passwords
+     * are matching
+     * @param stringUsername provided username
+     * @param stringPhone provided phone
+     * @param stringPassword provided password
+     * @param stringConPassword provided confirmation password
+     */
+    private void registerUser(String stringUsername, String stringPhone, String stringPassword, String stringConPassword) {
+        if (stringUsername.equals("")||stringPhone.equals("")||stringPassword.equals("")||stringConPassword.equals("")) {
+            Toast.makeText(Register.this,"Please enter registration details", Toast.LENGTH_SHORT).show();
+        } else {
+            if (stringPassword.equals(stringConPassword)) {
+                Boolean checkUsername = db.checkUsername(stringUsername);
+                if (checkUsername == true) {
+                    Boolean insertUserData = db.insertUserData(stringUsername, stringPhone, stringPassword, "1");
+                    if (insertUserData == true) {
+                        Intent homePageIntent = new Intent(Register.this, HomePage.class);
+                        startActivity(homePageIntent);
+                        Toast.makeText(Register.this, "Registration successful", Toast.LENGTH_SHORT).show();
+                        finish();
+                    }
+
+                } else {
+                    Toast.makeText(Register.this, "Username already taken", Toast.LENGTH_SHORT).show();
+                }
+            } else {
+                Toast.makeText(Register.this, "Passwords are not matching", Toast.LENGTH_SHORT).show();
+            }
+        }
     }
 }
