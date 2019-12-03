@@ -37,41 +37,14 @@ public class ImportantContactsEdit extends AppCompatActivity {
         btnUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                ArrayList<EditText> inputs = new ArrayList<EditText>();
-                EditText gpPhone = findViewById(R.id.gpPhone);
-                inputs.add(gpPhone);
-                EditText gpMail = findViewById(R.id.gpMail);
-                inputs.add(gpMail);
-                EditText gpAddress = findViewById(R.id.gpAddress);
-                inputs.add(gpAddress);
-                EditText gpName = findViewById(R.id.gpName);
-                inputs.add(gpName);
-                EditText ecPhone = findViewById(R.id.ecPhone);
-                inputs.add(ecPhone);
-                EditText ecAddress = findViewById(R.id.ecAddress);
-                inputs.add(ecAddress);
-                EditText ecMail = findViewById(R.id.ecMail);
-                inputs.add(ecMail);
-                EditText ecRelation = findViewById(R.id.ecRelation);
-                inputs.add(ecRelation);
-                EditText ecName = findViewById(R.id.ecName);
-                inputs.add(ecName);
-
-                for(int i = 0;i<inputs.size();i++){
-                    if(inputs.get(i).getText().toString().equals("")){
-                        inputs.get(i).setText("Not filled");
-                    }
-                }
-
-                db.insertPractitionerData(gpName.getText().toString(),gpPhone.getText().toString(),gpAddress.getText().toString(),gpMail.getText().toString());
-                db.insertEmergencyContactData(ecName.getText().toString(),ecPhone.getText().toString(),ecAddress.getText().toString(),ecMail.getText().toString(),ecRelation.getText().toString());
-
-                finish();
+                updateContactDetails();
             }
         });
     }
 
+    /**
+     * Method to retrieve the contact details from the database and insert them into the EditTexts
+     */
     private void fillingLabelsFromDatabase() {
         db = new MedPalDatabase(ImportantContactsEdit.this);
 
@@ -114,6 +87,44 @@ public class ImportantContactsEdit extends AppCompatActivity {
             ecRelation.setText("");
         }
     }
+
+    /**
+     * Method to retrieve the inputs of the page and update the database with it
+     */
+    private void updateContactDetails() {
+        ArrayList<EditText> inputs = new ArrayList<EditText>();
+        EditText gpPhone = findViewById(R.id.gpPhone);
+        inputs.add(gpPhone);
+        EditText gpMail = findViewById(R.id.gpMail);
+        inputs.add(gpMail);
+        EditText gpAddress = findViewById(R.id.gpAddress);
+        inputs.add(gpAddress);
+        EditText gpName = findViewById(R.id.gpName);
+        inputs.add(gpName);
+        EditText ecPhone = findViewById(R.id.ecPhone);
+        inputs.add(ecPhone);
+        EditText ecAddress = findViewById(R.id.ecAddress);
+        inputs.add(ecAddress);
+        EditText ecMail = findViewById(R.id.ecMail);
+        inputs.add(ecMail);
+        EditText ecRelation = findViewById(R.id.ecRelation);
+        inputs.add(ecRelation);
+        EditText ecName = findViewById(R.id.ecName);
+        inputs.add(ecName);
+
+        //In case the input is left blank
+        for(int i = 0;i<inputs.size();i++){
+            if(inputs.get(i).getText().toString().equals("")){
+                inputs.get(i).setText("Not filled");
+            }
+        }
+
+        db.insertPractitionerData(gpName.getText().toString(),gpPhone.getText().toString(),gpAddress.getText().toString(),gpMail.getText().toString());
+        db.insertEmergencyContactData(ecName.getText().toString(),ecPhone.getText().toString(),ecAddress.getText().toString(),ecMail.getText().toString(),ecRelation.getText().toString());
+
+        finish(); //Go back to the contact details page
+    }
+
 
     /**
      * Method to ask confirmation from user if he wants to leave before confirming changes

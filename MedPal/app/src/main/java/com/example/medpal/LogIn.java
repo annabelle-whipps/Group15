@@ -33,18 +33,26 @@ public class LogIn extends AppCompatActivity {
             public void onClick(View v) {
                 String logInUsername = log_in_username.getText().toString();
                 String logInPassword = log_in_password.getText().toString();
-                Boolean checkLoginDetails = db.checkLoginDetails(logInUsername, logInPassword);
-                if (checkLoginDetails) {
-                    Intent homePageIntent = new Intent(LogIn.this, HomePage.class);
-                    startActivity(homePageIntent);
-                    Toast.makeText(LogIn.this, "Login Successful", Toast.LENGTH_SHORT).show();
-                    db.connectUser(logInUsername);
-                    finish();
-                } else {
-                        Toast.makeText(LogIn.this, "Username or Password incorrect", Toast.LENGTH_SHORT).show();
-                }
+                loginUser(logInUsername, logInPassword);
             }
-
         });
+    }
+
+    /**
+     * Method to log in a user using the credentials he provided
+     * @param logInUsername submitted username
+     * @param logInPassword submitted password
+     */
+    private void loginUser(String logInUsername, String logInPassword) {
+        Boolean checkLoginDetails = db.checkLoginDetails(logInUsername, logInPassword);
+        if (checkLoginDetails) {
+            Intent homePageIntent = new Intent(LogIn.this, HomePage.class);
+            startActivity(homePageIntent);
+            Toast.makeText(LogIn.this, "Login Successful", Toast.LENGTH_SHORT).show();
+            db.connectUser(logInUsername);
+            finish();
+        } else {
+            Toast.makeText(LogIn.this, "Username or Password incorrect", Toast.LENGTH_SHORT).show();
+        }
     }
 }
