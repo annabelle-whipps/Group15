@@ -3,7 +3,10 @@ package com.example.medpal;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.google.android.gms.location.LocationServices;
+
 public class CentreInformation extends AppCompatActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -15,4 +18,5 @@ public class CentreInformation extends AppCompatActivity {
         getSupportActionBar().setLogo(R.mipmap.logo1_foreground);
         getSupportActionBar().setDisplayUseLogoEnabled(true);
     }
+
 }
