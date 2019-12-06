@@ -43,9 +43,7 @@ public class Setting extends AppCompatActivity implements AdapterView.OnItemSele
         getSupportActionBar().setDisplayUseLogoEnabled(true);
 
         //Create shared preferences object
-        this.sharedPrefs = getSharedPreferences(prefsFile, MODE_PRIVATE);
-        //Sets the language of the page from the user's preferences
-        this.changeLanguage(this.sharedPrefs.getString("Language","English"));
+        this.sharedPrefs = getApplicationContext().getSharedPreferences(prefsFile, MODE_PRIVATE);
         //Get preferences themeInteger themePref = 1;​
         //Load in saved theme, if none is selected default to default
 
@@ -60,6 +58,9 @@ public class Setting extends AppCompatActivity implements AdapterView.OnItemSele
         this.app_Version_Text = findViewById(R.id.appVersionText);
         this.languages_Text = findViewById(R.id.languagesText);
         this.sign_out_Text = findViewById(R.id.signOutButton);
+
+        //Sets the language of the page from the user's preferences
+        this.changeLanguage(this.sharedPrefs.getString("language",null));
 
         //Languages Spinner
         final ArrayAdapter adapter = ArrayAdapter.createFromResource(this, R.array.languages, android.R.layout.simple_spinner_item);        //Text Size Spinner
