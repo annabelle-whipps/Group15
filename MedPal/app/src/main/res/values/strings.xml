@@ -108,26 +108,32 @@
     <string name="tvSixPM">6:00 PM</string>
     <string name="btnAddReminder">Add Reminder</string>
 
-<!--Medical Centre page    -->
-<string name="mapImage">Medical centre map</string>
-<string name="medical_centre_logo">Medical centre logo</string>
-<string name="medical_centre_name">Medical centre name</string>
+    <!--Medical Centre page    -->
+    <string name="mapImage">Medical centre map</string>
+    <string name="medical_centre_logo">Medical centre logo</string>
+    <string name="medical_centre_name">Medical centre name</string>
+    <string name="medical_practices_nearby">Medical Practices and Hospitals near you</string>
+    <string name="medical_practices">Medical Practices</string>
+    <string name="hospitals">Hospitals</string>
 
     <!--Settings page-->
-<string name="settings_logo">Settings Logo</string>
-<string name="settingsTitle">Settings</string>
-<string name="languagesText">Languages :</string>
-<string name="textSizeText">Text size :</string>
-<string name="colourThemeText">Colour :</string>
-<string name="userAvatar">Avatar :</string>
-<string name="changeAvatar">Change Avatar</string>
-<string name="cameraIcon">Camera Icon</string>
-<string name="userEmail">Email :</string>
-<string name="allowUpdatesText">Allow automatic updates :</string>
-<string name="appVersionText">App version : 1.0.0</string>
-<string name="signOutButton">Sign out</string>
-
-    <!--Extras-->
-    <string name="medicineIdExtra">MEDICINE_ID</string>
-    </resources>
+    <string name="settings_logo">Settings Logo</string>
+    <string name="settingsTitle">Settings</string>
+    <string name="languagesText">Languages :</string>
+    <string name="textSizeText">Text size :</string>
+    <string name="colourThemeText">Colour :</string>
+    <string name="userAvatar">Avatar :</string>
+    <string name="changeAvatar">Change Avatar</string>
+    <string name="cameraIcon">Camera Icon</string>
+    <string name="userEmail">Email :</string>
+    <string name="allowUpdatesText">Allow automatic updates :</string>
+    <string name="appVersionText">App version : 1.0.0</string>
+    <string name="signOutButton">Sign out</string>
+    <string name="title_activity_nearby_medical_practices">Map</string>
+    <string name="place_name">Place Name</string>
+    <string name="search">Search</string>
+    <string name="medical_practice">Medical Practice</string>
+    <string name="hospital">Hospital</string>
+    <string name="emergency_room">Emergency Room</string>
+</resources>
 

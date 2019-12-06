@@ -72,7 +72,7 @@ public class HomePage extends AppCompatActivity {
         btnMedicalCentres.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent medicalCentresIntent = new Intent(HomePage.this, CentreInformation.class);
+                Intent medicalCentresIntent = new Intent(HomePage.this, NearbyMedicalPractices.class);
                 startActivity(medicalCentresIntent);
             }
         });
