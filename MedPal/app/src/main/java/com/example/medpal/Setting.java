@@ -47,17 +47,16 @@ public class Setting extends AppCompatActivity implements AdapterView.OnItemSele
         //Load in saved theme, if none is selected default to default
 
         /* Set strings for translation */
-        languages_select = findViewById(R.id.languagesSpinner);
-        settings_Text = findViewById(R.id.settingsTitle);
-        text_Size_Text = findViewById(R.id.textSizeText);
-        colour_Theme_Text = findViewById(R.id.colourThemeText);
-        change_Avatar_Text = findViewById(R.id.changeAvatar);
-        user_Email_Text = findViewById(R.id.userEmail);
-        allow_Automatic_Updates = findViewById(R.id.allowUpdatesText);
-        app_Version_Text = findViewById(R.id.appVersionText);
-        languages_Text = findViewById(R.id.languagesText);
-        sign_out_Text = findViewById(R.id.signOutButton);
-
+        this.languages_select = findViewById(R.id.languagesSpinner);
+        this.settings_Text = findViewById(R.id.settingsTitle);
+        this.text_Size_Text = findViewById(R.id.textSizeText);
+        this.colour_Theme_Text = findViewById(R.id.colourThemeText);
+        this.change_Avatar_Text = findViewById(R.id.changeAvatar);
+        this.user_Email_Text = findViewById(R.id.userEmail);
+        this.allow_Automatic_Updates = findViewById(R.id.allowUpdatesText);
+        this.app_Version_Text = findViewById(R.id.appVersionText);
+        this.languages_Text = findViewById(R.id.languagesText);
+        this.sign_out_Text = findViewById(R.id.signOutButton);
 
         //Languages Spinner
         final ArrayAdapter adapter = ArrayAdapter.createFromResource(this, R.array.languages, android.R.layout.simple_spinner_item);        //Text Size Spinner
@@ -96,17 +95,16 @@ public class Setting extends AppCompatActivity implements AdapterView.OnItemSele
     }
 
     public void setEnglish() {
-        app_Name.setText("@");
-        allow_Automatic_Updates.setText(R.string.allowUpdatesText);
-        app_Version_Text.setText(R.string.app_version);
-        change_Avatar_Text.setText(R.string.change_avatar);
-        colour_Theme_Text.setText(R.string.colour_theme);
-        languages_Text.setText(R.string.languages);
-        medpal_Text.setText(R.string.medpal);
-        settings_Text.setText(R.string.settings);
-        sign_out_Text.setText(R.string.sign_out);
-        user_Email_Text.setText(R.string.user_email);
-        text_Size_Text.setText(R.string.text_size);
+        this.medpal_Text.setText(R.string.medpal);
+        this.settings_Text.setText(R.string.settings);
+        this.text_Size_Text.setText(R.string.text_size);
+        this.colour_Theme_Text.setText(R.string.colour_theme);
+        this.change_Avatar_Text.setText(R.string.change_avatar);
+        this.user_Email_Text.setText(R.string.user_email);
+        this.allow_Automatic_Updates.setText(R.string.allowUpdatesText);
+        this.app_Version_Text.setText(R.string.app_version);
+        this.languages_Text.setText(R.string.languages);
+        this.sign_out_Text.setText(R.string.sign_out);
     }
     public void setSpanish(){
         app_Name.setText(R.string.app_name_spanish);
