@@ -30,6 +30,7 @@ public class Setting extends AppCompatActivity implements AdapterView.OnItemSele
     TextView languages_Text;
     TextView sign_out_Text;
     TextView medpal_Text;
+    SharedPreferences sharedPrefs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +43,9 @@ public class Setting extends AppCompatActivity implements AdapterView.OnItemSele
         getSupportActionBar().setDisplayUseLogoEnabled(true);
 
         //Create shared preferences object
-        SharedPreferences sharedPrefs = getSharedPreferences(prefsFile, MODE_PRIVATE);
+        this.sharedPrefs = getSharedPreferences(prefsFile, MODE_PRIVATE);
+        //Sets the language of the page from the user's preferences
+        this.changeLanguage(this.sharedPrefs.getString("Language","English"));
         //Get preferences themeInteger themePref = 1;​
         //Load in saved theme, if none is selected default to default
 
@@ -69,6 +72,14 @@ public class Setting extends AppCompatActivity implements AdapterView.OnItemSele
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id) {
         String language = (String) adapterView.getItemAtPosition(position);
+        changeLanguage(language);
+    }
+
+    private void changeLanguage(String language) {
+        SharedPreferences.Editor myEdit = sharedPrefs.edit();
+        myEdit.putString("language", language);
+        myEdit.commit();
+
         switch (language){
             case "English":
                 setEnglish();
@@ -95,7 +106,6 @@ public class Setting extends AppCompatActivity implements AdapterView.OnItemSele
     }
 
     public void setEnglish() {
-        this.medpal_Text.setText(R.string.medpal);
         this.settings_Text.setText(R.string.settings);
         this.text_Size_Text.setText(R.string.text_size);
         this.colour_Theme_Text.setText(R.string.colour_theme);
@@ -107,58 +117,50 @@ public class Setting extends AppCompatActivity implements AdapterView.OnItemSele
         this.sign_out_Text.setText(R.string.sign_out);
     }
     public void setSpanish(){
-        app_Name.setText(R.string.app_name_spanish);
-        allow_Automatic_Updates.setText(R.string.allow_automatic_updates_spanish);
-        app_Version_Text.setText(R.string.app_version_spanish);
-        change_Avatar_Text.setText(R.string.change_avatar_spanish);
-        colour_Theme_Text.setText(R.string.colour_theme_spanish);
-        languages_Text.setText(R.string.languages_spanish);
-        medpal_Text.setText(R.string.medpal_spanish);
-        settings_Text.setText(R.string.settings_spanish);
-        sign_out_Text.setText(R.string.sign_out_spanish);
-        user_Email_Text.setText(R.string.user_email_spanish);
-        text_Size_Text.setText(R.string.text_size_spanish);
+        this.settings_Text.setText(R.string.settings_spanish);
+        this.text_Size_Text.setText(R.string.text_size_spanish);
+        this.colour_Theme_Text.setText(R.string.colour_theme_spanish);
+        this.change_Avatar_Text.setText(R.string.change_avatar_spanish);
+        this.user_Email_Text.setText(R.string.user_email_spanish);
+        this.allow_Automatic_Updates.setText(R.string.allow_automatic_updates_spanish);
+        this.app_Version_Text.setText(R.string.app_version_spanish);
+        this.languages_Text.setText(R.string.languages_spanish);
+        this.sign_out_Text.setText(R.string.sign_out_spanish);
     }
     public void setFrench() {
-        app_Name.setText(R.string.app_name_french);
-        allow_Automatic_Updates.setText(R.string.allow_automatic_updates_french);
-        app_Version_Text.setText(R.string.app_version_french);
-        change_Avatar_Text.setText(R.string.change_avatar_french);
-        colour_Theme_Text.setText(R.string.colour_theme_french);
-        languages_Text.setText(R.string.languages_french);
-        medpal_Text.setText(R.string.medpal_french);
-        settings_Text.setText(R.string.settings_french);
-        sign_out_Text.setText(R.string.sign_out_french);
-        user_Email_Text.setText(R.string.user_email_french);
-        text_Size_Text.setText(R.string.text_size_french);
+        this.settings_Text.setText(R.string.settings_french);
+        this.text_Size_Text.setText(R.string.text_size_french);
+        this.colour_Theme_Text.setText(R.string.colour_theme_french);
+        this.change_Avatar_Text.setText(R.string.change_avatar_french);
+        this.user_Email_Text.setText(R.string.user_email_french);
+        this.allow_Automatic_Updates.setText(R.string.allow_automatic_updates_french);
+        this.app_Version_Text.setText(R.string.app_version_french);
+        this.languages_Text.setText(R.string.languages_french);
+        this.sign_out_Text.setText(R.string.sign_out_french);
     }
     public void setPolish(){
-        app_Name.setText(R.string.app_name_polish);
-        allow_Automatic_Updates.setText(R.string.allow_automatic_updates_polish);
-        app_Version_Text.setText(R.string.app_version_polish);
-        change_Avatar_Text.setText(R.string.change_avatar_polish);
-        colour_Theme_Text.setText(R.string.colour_theme_polish);
-        languages_Text.setText(R.string.languages_polish);
-        medpal_Text.setText(R.string.medpal_polish);
-        settings_Text.setText(R.string.settings_polish);
-        sign_out_Text.setText(R.string.sign_out_polish);
-        user_Email_Text.setText(R.string.user_email_polish);
-        text_Size_Text.setText(R.string.text_size_polish);
+        this.settings_Text.setText(R.string.settings_polish);
+        this.text_Size_Text.setText(R.string.text_size_polish);
+        this.colour_Theme_Text.setText(R.string.colour_theme_polish);
+        this.change_Avatar_Text.setText(R.string.change_avatar_polish);
+        this.user_Email_Text.setText(R.string.user_email_polish);
+        this.allow_Automatic_Updates.setText(R.string.allow_automatic_updates_polish);
+        this.app_Version_Text.setText(R.string.app_version_polish);
+        this.languages_Text.setText(R.string.languages_polish);
+        this.sign_out_Text.setText(R.string.sign_out_polish);
     }
 
 
     public void setChinese() {
-        app_Name.setText(R.string.app_name_chinese);
-        allow_Automatic_Updates.setText(R.string.allow_automatic_updates_chinese);
-        app_Version_Text.setText(R.string.app_version_chinese);
-        change_Avatar_Text.setText(R.string.change_avatar_chinese);
-        colour_Theme_Text.setText(R.string.colour_theme_chinese);
-        languages_Text.setText(R.string.languages_chinese);
-        medpal_Text.setText(R.string.medpal_chinese);
-        settings_Text.setText(R.string.settings_chinese);
-        sign_out_Text.setText(R.string.sign_out_chinese);
-        user_Email_Text.setText(R.string.user_email_chinese);
-        text_Size_Text.setText(R.string.text_size_chinese);
+        this.settings_Text.setText(R.string.settings_chinese);
+        this.text_Size_Text.setText(R.string.text_size_chinese);
+        this.colour_Theme_Text.setText(R.string.colour_theme_chinese);
+        this.change_Avatar_Text.setText(R.string.change_avatar_chinese);
+        this.user_Email_Text.setText(R.string.user_email_chinese);
+        this.allow_Automatic_Updates.setText(R.string.allow_automatic_updates_chinese);
+        this.app_Version_Text.setText(R.string.app_version_chinese);
+        this.languages_Text.setText(R.string.languages_chinese);
+        this.sign_out_Text.setText(R.string.sign_out_chinese);
     }
 
 }
