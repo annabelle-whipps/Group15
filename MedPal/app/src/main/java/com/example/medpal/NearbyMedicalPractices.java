@@ -176,9 +176,9 @@ public class NearbyMedicalPractices extends FragmentActivity implements OnMapRea
             case R.id.btnHospital:
                 mMap.clear();
                 String hospital = "hospital";
-                String url1 = getUrl(latitude, longitude, hospital);
+                url = getUrl(latitude, longitude, hospital);
                 dataTransfer[0] = mMap;
-                dataTransfer[1] = url1;
+                dataTransfer[1] = url;
 
                 getNearByPlaces.execute(dataTransfer);
                 Toast.makeText(NearbyMedicalPractices.this, "Showing nearby Hospitals", Toast.LENGTH_SHORT ).show();
@@ -186,9 +186,9 @@ public class NearbyMedicalPractices extends FragmentActivity implements OnMapRea
             case R.id.btnEmergencyRoom:
                 mMap.clear();
                 String emergency_room = "emergency room";
-                 String url2 = getUrl(latitude, longitude, emergency_room);
+                url = getUrl(latitude, longitude, emergency_room);
                 dataTransfer[0] = mMap;
-                dataTransfer[1] = url2;
+                dataTransfer[1] = url;
 
                 getNearByPlaces.execute(dataTransfer);
                 Toast.makeText(NearbyMedicalPractices.this, "Showing nearby Emergency Rooms", Toast.LENGTH_SHORT ).show();
