@@ -37,6 +37,9 @@
             android:name=".MedicineDetails"
             android:parentActivityName=".MyPrescriptions" />
         <activity
+            android:name=".NewReminderActivity"
+            android:parentActivityName=".MedicineDetails" />
+        <activity
             android:name=".MedicalRecord"
             android:parentActivityName=".HomePage" />
         <activity

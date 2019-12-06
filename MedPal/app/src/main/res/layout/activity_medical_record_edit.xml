@@ -40,16 +40,16 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
+
                     <EditText
                         android:id="@+id/personName"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:text="@string/personName"
-                        android:textSize="25dp"
+                        android:layout_weight="1"
                         android:textAlignment="center"
                         android:textColor="@color/colorPrimaryDark"
-                        android:textStyle="bold"
-                        android:layout_weight="1"/>
+                        android:textSize="25dp"
+                        android:textStyle="bold" />
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -66,14 +66,14 @@
                         android:textColor="@color/colorPrimaryDark"
                         android:textStyle="bold"
                         android:layout_weight="1"/>
+
                     <EditText
                         android:id="@+id/personDob"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:text="@string/dateOfBirth"
-                        android:textSize="25dp"
+                        android:layout_weight="1"
                         android:textColor="@color/colorPrimaryDark"
-                        android:layout_weight="1"/>
+                        android:textSize="25dp" />
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -89,14 +89,14 @@
                         android:textColor="@color/colorPrimaryDark"
                         android:textStyle="bold"
                         android:layout_weight="1"/>
+
                     <EditText
                         android:id="@+id/personAddress"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:text="@string/personAddress"
-                        android:textSize="25dp"
+                        android:layout_weight="1"
                         android:textColor="@color/colorPrimaryDark"
-                        android:layout_weight="1"/>
+                        android:textSize="25dp" />
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -107,14 +107,14 @@
                         android:layout_height="match_parent"
                         android:textColor="@color/colorPrimaryDark"
                         android:layout_weight="1"/>
+
                     <EditText
                         android:id="@+id/personPostCode"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:text="@string/personPostCode"
-                        android:textSize="25dp"
+                        android:layout_weight="1"
                         android:textColor="@color/colorPrimaryDark"
-                        android:layout_weight="1"/>
+                        android:textSize="25dp" />
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -126,14 +126,14 @@
                         android:textAlignment="center"
                         android:textColor="@color/colorPrimaryDark"
                         android:layout_weight="1"/>
+
                     <EditText
                         android:id="@+id/personCity"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:text="@string/personCity"
-                        android:textSize="25dp"
+                        android:layout_weight="1"
                         android:textColor="@color/colorPrimaryDark"
-                        android:layout_weight="1"/>
+                        android:textSize="25dp" />
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -149,14 +149,16 @@
                         android:textColor="@color/colorPrimaryDark"
                         android:textStyle="bold"
                         android:layout_weight="1"/>
+
                     <EditText
                         android:id="@+id/personPhone"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:text="@string/personPhone"
-                        android:textSize="25dp"
+                        android:layout_weight="1"
+                        android:digits="0123456789+"
+                        android:inputType="phone"
                         android:textColor="@color/colorPrimaryDark"
-                        android:layout_weight="1"/>
+                        android:textSize="25dp" />
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -172,14 +174,14 @@
                         android:textColor="@color/colorPrimaryDark"
                         android:textStyle="bold"
                         android:layout_weight="1"/>
+
                     <EditText
-                        android:id="@+id/diseasesList"
+                        android:id="@+id/eVDiseasesList"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:text="Diabete\nAsthma"
-                        android:textSize="25dp"
+                        android:layout_weight="1"
                         android:textColor="@color/colorPrimaryDark"
-                        android:layout_weight="1"/>
+                        android:textSize="25dp" />
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -195,15 +197,38 @@
                         android:textColor="@color/colorPrimaryDark"
                         android:textStyle="bold"
                         android:layout_weight="1"/>
+
                     <EditText
                         android:id="@+id/allergiesList"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:text="Mosquito bites"
-                        android:textSize="25dp"
+                        android:layout_weight="1"
                         android:textColor="@color/colorPrimaryDark"
-                        android:layout_weight="1"/>
+                        android:textSize="25dp" />
                 </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnUpdateMedRec"
+                    android:layout_width="fill_parent"
+                    android:layout_height="35dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/button_border_dark"
+                    android:text="@string/btnUpdateMedRec"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF"
+                    android:textSize="25dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
         </LinearLayout>
     </ScrollView>
 
