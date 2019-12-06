@@ -16,8 +16,8 @@ import java.util.List;
 
 public class GetNearByPlaces extends AsyncTask<Object, String, String> {
 
-    String googlePlacesData;
-    GoogleMap mMap;
+    private String googlePlacesData;
+    private GoogleMap mMap;
     String url;
 
     @Override
@@ -25,6 +25,7 @@ public class GetNearByPlaces extends AsyncTask<Object, String, String> {
         mMap = (GoogleMap)objects[0];
         url = (String)objects[1];
 
+        //Downloads URL of Places API
         DownloadUrl downloadUrl = new DownloadUrl();
         try {
             googlePlacesData = downloadUrl.readUrl(url);
@@ -37,27 +38,33 @@ public class GetNearByPlaces extends AsyncTask<Object, String, String> {
 
     @Override
     protected void onPostExecute(String s) {
-        List<HashMap<String, String>> nearbyPlaceList = null;
+
+        List<HashMap<String, String>> nearbyPlaceList;
         DataParser parser = new DataParser();
         nearbyPlaceList = parser.parse(s);
+        Log.d("GetNearByPlaces", "Calling parse method");
         showNearbyPlaces(nearbyPlaceList);
     }
 
     private void showNearbyPlaces(List<HashMap<String, String>> nearbyPlaceList) {
         for (int i = 0; i < nearbyPlaceList.size(); i++) {
+
             MarkerOptions markerOptions = new MarkerOptions();
             HashMap<String, String> googlePlace = nearbyPlaceList.get(i);
 
+            //Gets the name and vicinity with the latitude and longitude of the nearby location.
             String placeName = googlePlace.get("place_name");
             String vicinity = googlePlace.get("vicinity");
             double lat = Double.parseDouble(googlePlace.get("lat"));
             double lng = Double.parseDouble(googlePlace.get("lng"));
 
+            //Places the marker on the nearby locations
             LatLng latLng = new LatLng(lat, lng);
             markerOptions.position(latLng);
-            markerOptions.title(placeName +" : "+ vicinity);
+            markerOptions.title(placeName + " : "+ vicinity);
             markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE));
 
+            //Adds marker to map and updates the camera settings
             mMap.addMarker(markerOptions);
             mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
             mMap.animateCamera(CameraUpdateFactory.zoomTo(10));

@@ -1,5 +1,7 @@
 package com.example.medpal;
 
+import android.util.Log;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -11,12 +13,15 @@ import java.util.List;
 public class DataParser {
 
     private HashMap<String, String> getPlace(JSONObject googlePlaceJson) {
+
         HashMap<String, String> googlePlacesMap = new HashMap<>();
-        String placeName = "-NA-";
-        String vicinity = "-NA-";
+        String placeName = "--NA--";
+        String vicinity = "--NA--";
         String latitude = "";
         String longitude = "";
         String reference = "";
+
+        Log.d("DataParser", "jsonObject =" + googlePlaceJson.toString());
 
         try {
 
@@ -59,6 +64,7 @@ public class DataParser {
                 ;
             }
         }
+        //Returns placeList
         return placesList;
     }
 
@@ -73,6 +79,7 @@ public class DataParser {
             e.printStackTrace();
         }
 
+        //Returns places from JSONArray
         return getPlaces(jsonArray);
 
     }

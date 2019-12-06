@@ -63,6 +63,7 @@ public class NearbyMedicalPractices extends FragmentActivity implements OnMapRea
         mapFragment.getMapAsync(this);
     }
 
+    //Checking if user has given permission to use location, if not asks user for permission.
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults){
 
@@ -76,7 +77,7 @@ public class NearbyMedicalPractices extends FragmentActivity implements OnMapRea
                     mMap.setMyLocationEnabled(true);
                 }
             }
-            else {
+            else { //If users denys permission to use Location.
                 Toast.makeText(this, "Permission denied", Toast.LENGTH_LONG).show();
             }
         }
@@ -86,12 +87,13 @@ public class NearbyMedicalPractices extends FragmentActivity implements OnMapRea
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
-            buildGoogleApiClient();
-            mMap.setMyLocationEnabled(true);
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) { //Checks if Location permissions are granted
+            buildGoogleApiClient(); //If granted builds googleApiClient
+            mMap.setMyLocationEnabled(true); //Loads the map with the location of user
         }
     }
 
+    //Builds the googleApiClient
     protected synchronized void buildGoogleApiClient() {
         client = new GoogleApiClient.Builder(this)
                 .addConnectionCallbacks(this)
@@ -101,11 +103,11 @@ public class NearbyMedicalPractices extends FragmentActivity implements OnMapRea
         client.connect();
     }
 
-    @Override
+    @Override //Checks if users location has updated
     public void onLocationChanged(Location location) {
-        latitude = location.getLatitude();
-        longitude = location.getLongitude();
-        lastLocation = location;
+        latitude = location.getLatitude(); //gets latitude of location
+        longitude = location.getLongitude(); //gets longitude of location
+        lastLocation = location; //gets the users lastLocation
 
         if (currentLocationMarker != null) {
 
@@ -214,12 +216,13 @@ public class NearbyMedicalPractices extends FragmentActivity implements OnMapRea
     @Override
     public void onConnected(@Nullable Bundle bundle) {
 
+        //Interval set to 1000 or 1 millisecond
         locationRequest = new LocationRequest();
-        locationRequest.setInterval(100);
+        locationRequest.setInterval(1000);
         locationRequest.setFastestInterval(1000);
         locationRequest.setPriority(LocationRequest.PRIORITY_BALANCED_POWER_ACCURACY);
 
-
+        //Checks if Location Services granted and request location updates
         if(ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION ) == PackageManager.PERMISSION_GRANTED)
         {
             LocationServices.FusedLocationApi.requestLocationUpdates(client, locationRequest, (com.google.android.gms.location.LocationListener) this);
@@ -227,13 +230,16 @@ public class NearbyMedicalPractices extends FragmentActivity implements OnMapRea
     }
 
 
+    //Checks if the user has Location permissions for the application
     public boolean checkLocationPermission()
     {
+        //Checks if permission to access fine_location is granted.
         if(ContextCompat.checkSelfPermission(this,Manifest.permission.ACCESS_FINE_LOCATION)  != PackageManager.PERMISSION_GRANTED )
         {
-
+            //Checks if permission has been granted by user.
             if (ActivityCompat.shouldShowRequestPermissionRationale(this,Manifest.permission.ACCESS_FINE_LOCATION))
             {
+                //Allows manifest to access location of device.
                 ActivityCompat.requestPermissions(this,new String[] {Manifest.permission.ACCESS_FINE_LOCATION },REQUEST_LOCATION_CODE);
             }
             else

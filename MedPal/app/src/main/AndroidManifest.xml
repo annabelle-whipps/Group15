@@ -42,7 +42,9 @@
 
         <activity
             android:name=".NearbyMedicalPractices"
-            android:label="@string/title_activity_nearby_medical_practices"></activity>
+            android:parentActivityName=".HomePage"
+            android:label="@string/title_activity_nearby_medical_practices">
+        </activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -76,9 +78,6 @@
             android:name=".ImportantContacts"
             android:parentActivityName=".HomePage" />
         <activity android:name=".ImportantContactsEdit" />
-        <activity
-            android:name=".CentreInformation"
-            android:parentActivityName=".HomePage" />
         <activity
             android:name=".Setting"
             android:parentActivityName=".HomePage" />
