@@ -135,5 +135,88 @@
     <string name="medical_practice">Medical Practice</string>
     <string name="hospital">Hospital</string>
     <string name="emergency_room">Emergency Room</string>
+
+
+    //Settings Page
+    <string name="app_name">medpal_settings</string>
+    <string name="medpal">MedPal</string>
+    <string name="settings">Settings</string>
+    <string name="languages">Languages</string>
+    <string name="text_size">Text Size</string>
+    <string name="colour_theme">Colour Theme</string>
+    <string name="change_avatar">CHANGE AVATAR</string>
+    <string name="user_email">User Email</string>
+    <string name="allow_automatic_updates">Allow Automatic Updates</string>
+    <string name="app_version">App Version</string>
+    <string name="sign_out">SIGN OUT</string>
+    ​
+    //Settings Page - Spanish
+    <string name="app_name_spanish">medpal_settings</string>
+    <string name="allow_automatic_updates_spanish">Permitir actualizaciones automáticas</string>
+    <string name="app_version_spanish">Version de aplicacion</string>
+    <string name="change_avatar_spanish">CAMBIAR AVATAR</string>
+    <string name="colour_theme_spanish">Tema de color</string>
+    <string name="languages_spanish">Idiomas</string>
+    <string name="medpal_spanish">Medpal</string>
+    <string name="settings_spanish">Configuraciones</string>
+    <string name="sign_out_spanish">DESCONECTAR</string>
+    <string name="text_size_spanish">Tamano del texto</string>
+    <string name="user_email_spanish">Email del usuario</string>
+    ​
+    //Settings Page - French
+    <string name="allow_automatic_updates_french">Autoriser les mises à jour automatiques</string>
+    <string name="app_name_french">medpal_settings</string>
+    <string name="app_version_french">Version de l\'application</string>
+    <string name="change_avatar_french">CHANGER D\'AVATAR</string>
+    <string name="colour_theme_french">Thème de couleur</string>
+    <string name="languages_french">Langues</string>
+    <string name="medpal_french">Medpal</string>
+    <string name="settings_french">Paramètres</string>
+    <string name="sign_out_french">DÉCONNEXION</string>
+    <string name="text_size_french">Taille du texte</string>
+    <string name="user_email_french">" Email de l'utilisateur"</string>
+    ​
+    //Settings Page - Polish
+    <string name="app_name_polish">medpal_settings</string>
+    <string name="allow_automatic_updates_polish">Zezwalaj na automatyczne aktualizacje</string>
+    <string name="app_version_polish">Wersja aplikacji</string>
+    <string name="change_avatar_polish">Zmień awatar</string>
+    <string name="colour_theme_polish">Motyw kolorystyczny</string>
+    <string name="medpal_polish">Medpal</string>
+    <string name="languages_polish">Języki</string>
+    <string name="settings_polish">Ustawienia</string>
+    <string name="sign_out_polish">WYLOGUJ SIĘ</string>
+    <string name="text_size_polish">Rozmiar czcionki</string>
+    <string name="user_email_polish">E-mail użytkownika</string>
+    ​
+    //Settings Page - Chinese
+    <string name="app_name_chinese">medpal_settings</string>
+    <string name="allow_automatic_updates_chinese">允许自动更新</string>
+    <string name="app_version_chinese">应用程式版本</string>
+    <string name="change_avatar_chinese">更改头像</string>
+    <string name="colour_theme_chinese">颜色主题</string>
+    <string name="languages_chinese">语言</string>
+    <string name="medpal_chinese">Medpal</string>
+    <string name="settings_chinese">设定值</string>
+    <string name="sign_out_chinese">登出</string>
+    <string name="text_size_chinese">字体大小</string>
+    <string name="user_email_chinese">用户电子邮件</string>
+
+    //Array for languages spinner
+    <string-array name="languages">
+        <item>English</item>
+        <item>Spanish</item>
+        <item>French</item>
+        <item>Polish</item>
+        <item>Chinese</item>
+    </string-array>
+    ​
+    //Array for font size spinner
+    <string-array name="text_size">
+        <item>small</item>
+        <item>medium</item>
+        <item>large</item>
+    </string-array>
+
 </resources>
 
