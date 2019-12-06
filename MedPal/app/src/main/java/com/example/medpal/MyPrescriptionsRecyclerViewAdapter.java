@@ -18,10 +18,10 @@ public class MyPrescriptionsRecyclerViewAdapter extends RecyclerView.Adapter<MyP
 
     private static final String TAG = "RecyclerViewAdapter";
 
-    private ArrayList<String> myPrescriptions = new ArrayList<>();
+    private ArrayList<Medicine> myPrescriptions = new ArrayList<>();
     private Context mContext;
 
-    public MyPrescriptionsRecyclerViewAdapter(ArrayList<String> prescriptions, Context context) {
+    public MyPrescriptionsRecyclerViewAdapter(ArrayList<Medicine> prescriptions, Context context) {
         myPrescriptions = prescriptions;
         mContext = context;
     }
@@ -36,7 +36,8 @@ public class MyPrescriptionsRecyclerViewAdapter extends RecyclerView.Adapter<MyP
 
     @Override
     public void onBindViewHolder(@NonNull MyPrescriptionsViewHolder holder, final int position) {
-        holder.btnMyPrescriptionItem.setText(myPrescriptions.get(position));
+        holder.btnMyPrescriptionItem.setText(myPrescriptions.get(position).getName());
+        holder.medicineId = myPrescriptions.get(position).getId();
     }
 
     @Override
@@ -48,6 +49,7 @@ public class MyPrescriptionsRecyclerViewAdapter extends RecyclerView.Adapter<MyP
 
         Button btnMyPrescriptionItem;
         ConstraintLayout parentLayout;
+        Integer medicineId;
 
         public MyPrescriptionsViewHolder(View itemView){
             super(itemView);
@@ -60,6 +62,7 @@ public class MyPrescriptionsRecyclerViewAdapter extends RecyclerView.Adapter<MyP
                 @Override
                 public void onClick(View view) {
                     Intent goToRegisterActivity = new Intent(mContext, MedicineDetails.class);
+                    goToRegisterActivity.putExtra("MEDICINE_ID", medicineId);
                     mContext.startActivity(goToRegisterActivity);
                 }
             });

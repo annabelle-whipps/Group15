@@ -17,14 +17,15 @@
     <string name="dateOfBirth">27 / 08 / 1999</string>
     <string name="address">Address :</string>
     <string name="dob">DOB :</string>
-    <string name="personCity">Aberdeen</string>
+    <string name="personAddress">71 Farmers Hall</string>
     <string name="personPostCode">AB25 1XF</string>
+    <string name="personCity">Aberdeen</string>
     <string name="personPhone">+44 1234 5678 999</string>
     <string name="phone">Phone :</string>
     <string name="diseases">Diseases :</string>
     <string name="allergies">Allergies :</string>
     <string name="update">Update your record</string>
-    <string name="personAddress">71 Farmers Hall</string>
+    <string name="btnUpdateMedRec">Update Details</string>
 
     <!--Login Page -->
     <string name="sign_in_button">Sign In</string>
@@ -70,7 +71,7 @@
     <string name="btnSettings">Settings</string>
     <string name="btnHelp">HELP!</string>
 
-    <!--Medicine Details   -->
+    <!--Medicine Names -->
     <string name="tvMyPrescriptions">My Prescriptions:</string>
     <string name="tvMedicine1">Medicine 1</string>
     <string name="tvMedicine2">Medicine 2</string>
@@ -83,6 +84,11 @@
     <string name="tvMedicine9">Medicine 9</string>
     <string name="tvMedicine10">Medicine 10</string>
 
+    <!-- New Reminder -->
+    <string name="btnCreateReminder">Save Reminder</string>
+    <string name="alarmText"></string>
+    <string name="alarmTimePicker"></string>
+
     <!--Medicine Details   -->
     <string name="tvMedicineName">Medicine Name</string>
     <string name="tvPrescriptionDetails">Prescription Details</string>
@@ -92,7 +98,7 @@
     <string name="tvSideEffects">Nausea</string>
     <string name="tvPrescribedByLabel">Prescribed By</string>
     <string name="tvPrescribedBy">Dr DoLittle</string>
-    <string name="tvEtcLabel">Settings</string>
+    <string name="tvEtcLabel">Extra Info</string>
     <string name="tvEtc">Ets., Etc.</string>
     <string name="btnOrderMore">Order More</string>
     <string name="btnCancel">Cancel Prescription</string>
@@ -100,7 +106,7 @@
     <string name="tvEightAM">8:00 AM</string>
     <string name="tvOnePM">1:00 PM</string>
     <string name="tvSixPM">6:00 PM</string>
-    <string name="tvNew">Add Reminder</string>
+    <string name="btnAddReminder">Add Reminder</string>
 
     <!--Medical Centre page    -->
     <string name="mapImage">Medical centre map</string>

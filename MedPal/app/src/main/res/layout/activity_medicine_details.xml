@@ -200,73 +200,44 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:orientation="horizontal"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/medicineRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:orientation="horizontal">
+
                 <Button
-                    android:id="@+id/tvEightAM"
-                    android:layout_width="fill_parent"
+                    android:id="@+id/btnAddReminder"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/tvEightAM"
-                    android:textSize="20sp"
-                    android:textAlignment="textStart"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textStyle="bold"
-                    android:background="@color/colorPrimary"
                     android:layout_alignParentBottom="true"
-                    android:layout_weight="1"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <Button
-                    android:id="@+id/tvOnePM"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/tvOnePM"
-                    android:textSize="20sp"
-                    android:textAlignment="textStart"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textStyle="bold"
-                    android:background="@color/colorPrimary"
-                    android:layout_alignParentBottom="true" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <Button
-                    android:id="@+id/tvSixPM"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/tvOnePM"
-                    android:textSize="20sp"
-                    android:textAlignment="textStart"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textStyle="bold"
-                    android:background="@color/colorPrimary"
-                    android:layout_alignParentBottom="true" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <Button
-                    android:id="@+id/tvNew"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/tvNew"
-                    android:textSize="20sp"
-                    android:textAlignment="textStart"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textStyle="bold"
-                    android:background="@color/colorPrimary"
-                    android:layout_alignParentBottom="true" />
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_weight="1"
+                    android:background="@color/colorPrimaryDark"
+                    android:text="@string/btnAddReminder"
+                    android:textAlignment="center"
+                    android:textColor="@color/Text_colour"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

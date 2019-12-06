@@ -7,6 +7,8 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
+import java.util.ArrayList;
+
 import androidx.room.Delete;
 import androidx.room.Update;
 
@@ -23,14 +25,16 @@ public class MedPalDatabase extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("Create table user(username text primary key, phone text, password text, logged text)");
+        db.execSQL("Create table medicalRecords(username text primary key, dob text, address text, postCode text, city text, phone text, diseases text, allergies text)");
         db.execSQL("Create table practitioner(username text primary key, practitionerNumber text, practitionerName text, practitionerEmail text, practitionerAddress text)");
         db.execSQL("Create table emergencyContact(username text primary key, contactNumber text, contactName text, contactEmail text, contactAddress text,contactRelation text)");
-        db.execSQL("Create table medicine(medicineID integer primary key, name text)");
+        db.execSQL("Create table medicine(medicineId integer primary key autoincrement, medicineName text, dose text, sideEffects text, prescribedBy text, extraInfo text, username text)");
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("drop table if exists user");
+        db.execSQL("drop table if exists medicalRecords");
         db.execSQL("drop table if exists practitioner");
         db.execSQL("drop table if exists emergencyContact");
         db.execSQL("drop table if exists medicine");
@@ -42,7 +46,7 @@ public class MedPalDatabase extends SQLiteOpenHelper {
      * @param phone User's phone
      * @param password User's password
      * @param logged boolean to see if the user is logged in
-     * @return return code to know if the insertion in the databse worked
+     * @return return code to know if the insertion in the database worked
      */
     public boolean insertUserData(String username, String phone, String password, String logged) {
         SQLiteDatabase db = this.getWritableDatabase();
@@ -82,6 +86,58 @@ public class MedPalDatabase extends SQLiteOpenHelper {
     }
 
     /**
+     * Method to retrieve the medical record details from the logged user
+     * @return A Record object with the details retrieved from the database or null if not filled
+     */
+    public Record retrieveMedicalRecord() {
+        Cursor cursor;
+        SQLiteDatabase db = this.getReadableDatabase();
+        cursor = db.rawQuery("Select * from medicalRecords where username=?", new String[]{this.getLoggedUser()});
+        if (cursor != null && cursor.getCount() != 0) {
+            cursor.moveToFirst();
+            String dob = cursor.getString(cursor.getColumnIndex("dob"));
+            String address = cursor.getString(cursor.getColumnIndex("address"));
+            String postCode = cursor.getString(cursor.getColumnIndex("postCode"));
+            String city = cursor.getString(cursor.getColumnIndex("city"));
+            String phone = cursor.getString(cursor.getColumnIndex("phone"));
+            String diseases = cursor.getString(cursor.getColumnIndex("diseases"));
+            String allergies = cursor.getString(cursor.getColumnIndex("allergies"));
+
+            return new Record(dob, address, postCode, city, phone, diseases, allergies);
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * Method to insert/update the medical record details from the logged user
+     * @param dob user date of birth in the medical record
+     * @param address user address in the medical record
+     * @param postCode user post code in the medical record
+     * @param city user city in the medical record
+     * @param phone user phone number in the medical record
+     * @param diseases diseases the user has in the medical record
+     * @param allergies allergies the user has in the medical record
+     * @return true if updating worked and false if not
+     */
+    public boolean insertMedicalRecordData(String dob, String address, String postCode, String city, String phone, String diseases, String allergies) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete("medicalRecords", "username = ?", new String[]{this.getLoggedUser()});
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("dob", dob);
+        contentValues.put("address", address);
+        contentValues.put("postCode", postCode);
+        contentValues.put("city", city);
+        contentValues.put("phone", phone);
+        contentValues.put("diseases", diseases);
+        contentValues.put("allergies", allergies);
+        contentValues.put("username", this.getLoggedUser());
+        long insertValues = db.insert("medicalRecords", null, contentValues);
+        if (insertValues == -1) return false;
+        else return true;
+    }
+
+    /**
      * Method to retrieve the practitioner contact details from the logged user
      * @return A Contact object with the details retrieved from the database or null if not filled
      */
@@ -101,7 +157,7 @@ public class MedPalDatabase extends SQLiteOpenHelper {
     }
 
     /**
-     * Method to retreive the emergency contact details from the logged user
+     * Method to retrieve the emergency contact details from the logged user
      * @return A Contact object with the details retrieved from the database or null if not filled
      */
     public Contact retrieveEmergencyContact() {
@@ -197,6 +253,84 @@ public class MedPalDatabase extends SQLiteOpenHelper {
         Cursor cursor = db.rawQuery("Select username from user where logged='1'", null);
         if (cursor != null && cursor.moveToFirst()) {
             return cursor.getString(cursor.getColumnIndex("username"));
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * Method to insert new medicine entries into the medicine table
+     * @param medicineName name of the medicine
+     * @param dose dose of the medicine
+     * @param sideEffects side effects of the medicine
+     * @param extraInfo any additional details
+     * @return true if the updating worked and false if not
+     */
+    public boolean insertMedicineData(String medicineName, String dose, String sideEffects, String extraInfo) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery("Select * from medicine where username=? and medicineName=?", new String[]{this.getLoggedUser(), medicineName});
+        if(cursor.getCount() > 0 || this.retrievePractitioner() == null ) {
+            return false;
+        }
+        else {
+            ContentValues contentValues = new ContentValues();
+            contentValues.put("medicineName", medicineName);
+            contentValues.put("dose", dose);
+            contentValues.put("sideEffects", sideEffects);
+            contentValues.put("prescribedBy", this.retrievePractitioner() != null ? this.retrievePractitioner().getName() : "Not Set");
+            contentValues.put("extraInfo", extraInfo);
+            contentValues.put("username", this.getLoggedUser());
+            long insertValues = db.insert("medicine", null, contentValues);
+            if (insertValues == -1) return false;
+            else return true;
+        }
+    }
+
+    /**
+     * Method to retrieve all the medicine prescription details for the currently logged user from the database
+     * @return An ArrayList of Medicine objects with the details retrieved from the database or null if not filled
+     */
+    public ArrayList<Medicine> retrieveUserPrescriptions() {
+        ArrayList<Medicine> results = new ArrayList<>();
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("Select * from medicine where username=?", new String[]{this.getLoggedUser()});
+
+        if(cursor != null) {
+            cursor.moveToFirst();
+            while (!cursor.isAfterLast()) {
+                Integer Id = cursor.getInt(cursor.getColumnIndex("medicineId"));
+                String medicineName = cursor.getString(cursor.getColumnIndex("medicineName"));
+                String dose = cursor.getString(cursor.getColumnIndex("dose"));
+                String sideEffects = cursor.getString(cursor.getColumnIndex("sideEffects"));
+                String prescribedBy = cursor.getString(cursor.getColumnIndex("prescribedBy"));
+                String extraInfo = cursor.getString(cursor.getColumnIndex("extraInfo"));
+                Medicine item = new Medicine(Id, medicineName, dose, sideEffects, prescribedBy, extraInfo);
+                results.add(item);
+                cursor.moveToNext();
+            }
+            return results;
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * Method to retrieve all the medicine prescription details for the currently logged user from the database
+     * @return An ArrayList of Medicine objects with the details retrieved from the database or null if not filled
+     */
+    public Medicine retrieveMedicineDetails(Integer id) {
+        ArrayList<Medicine> results = new ArrayList<>();
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("Select * from medicine where medicineId=?", new String[]{id.toString()});
+
+        if (cursor != null && cursor.moveToFirst()) {
+            String medicineName = cursor.getString(cursor.getColumnIndex("medicineName"));
+            String dose = cursor.getString(cursor.getColumnIndex("dose"));
+            String sideEffects = cursor.getString(cursor.getColumnIndex("sideEffects"));
+            String prescribedBy = cursor.getString(cursor.getColumnIndex("prescribedBy"));
+            String extraInfo = cursor.getString(cursor.getColumnIndex("extraInfo"));
+
+            return new Medicine(id, medicineName, dose, sideEffects, prescribedBy, extraInfo);
         } else {
             return null;
         }
