@@ -124,5 +124,10 @@
     <string name="appVersionText">App version : 1.0.0</string>
     <string name="signOutButton">Sign out</string>
     <string name="title_activity_nearby_medical_practices">Map</string>
+    <string name="place_name">Place Name</string>
+    <string name="search">Search</string>
+    <string name="medical_practice">Medical Practice</string>
+    <string name="hospital">Hospital</string>
+    <string name="emergency_room">Emergency Room</string>
 </resources>
 

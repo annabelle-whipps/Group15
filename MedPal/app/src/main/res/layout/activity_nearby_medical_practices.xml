@@ -1,42 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<FrameLayout
+<RelativeLayout
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-<fragment xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:map="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/map"
-    android:name="com.google.android.gms.maps.SupportMapFragment"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".nearby_medical_practices" />
+    <EditText
+        android:id="@+id/search_location"
+        android:layout_width="290dp"
+        android:layout_height="45dp"
+        android:ems="10"
+        android:text="@string/place_name"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"/>
 
-    <LinearLayout xmlns:android="https://schemas.android.com/apk/res/android"
-        xmlns:tools="https://schemas.android.com/tools"
+    <Button
+        android:layout_width="120dp"
+        android:layout_height="45dp"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/search_location"
+        android:onClick="onClick"
+        android:text="@string/search"/>
+
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".NearbyMedicalPractices"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/btnMedical_practice"/>
+
+    <Button
+        android:id="@+id/btnMedical_practice"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="11dp"
+        android:layout_below="@+id/search_location"
+        android:onClick="onClick"
+        android:text="@string/medical_practice" />
 
-        <Button
-            android:id="@+id/btnMedical_practice"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Medical Practice"/>
+    <Button
+        android:id="@+id/btnHospital"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/search_location"
+        android:text="@string/hospital"
+        android:onClick="onClick"
+        android:layout_toRightOf="@+id/btnMedical_practice"/>
 
-        <Button
-            android:id="@+id/btnHospital"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Hospital"/>
+    <Button
+        android:id="@+id/btnEmergencyRoom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/search_location"
+        android:onClick="onClick"
+        android:layout_toRightOf="@+id/btnHospital"
+        android:text="@string/emergency_room" />
 
-        <Button
-            android:id="@+id/btnEmergencyRoom"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Emergency Room"/>
-
-    </LinearLayout>
-</FrameLayout>
+</RelativeLayout>

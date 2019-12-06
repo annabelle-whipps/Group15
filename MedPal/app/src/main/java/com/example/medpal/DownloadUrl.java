@@ -7,28 +7,24 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 import java.net.URL;
 
 public class DownloadUrl {
 
-    public String readUrl(String strUrl) throws IOException {
+    public String readUrl(String myUrl) throws IOException {
+
         String data = "";
-        InputStream iStream = null;
+        InputStream inputStream = null;
         HttpURLConnection urlConnection = null;
+
         try {
-            URL url = new URL(strUrl);
-
-            // Creating an http connection to communicate with url
+            URL url = new URL(myUrl);
             urlConnection = (HttpURLConnection) url.openConnection();
-
-            // Connecting to url
             urlConnection.connect();
 
-            // Reading data from url
-            iStream = urlConnection.getInputStream();
-
-            BufferedReader br = new BufferedReader(new InputStreamReader(iStream));
-
+            inputStream = urlConnection.getInputStream();
+            BufferedReader br = new BufferedReader(new InputStreamReader(inputStream));
             StringBuffer sb = new StringBuffer();
 
             String line = "";
@@ -37,13 +33,15 @@ public class DownloadUrl {
             }
 
             data = sb.toString();
-            Log.d("downloadUrl", data.toString());
             br.close();
 
-        } catch (Exception e) {
-            Log.d("Exception", e.toString());
-        } finally {
-            iStream.close();
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        finally {
+            inputStream.close();
             urlConnection.disconnect();
         }
         return data;

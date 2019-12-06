@@ -41,7 +41,7 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name=".nearby_medical_practices"
+            android:name=".NearbyMedicalPractices"
             android:label="@string/title_activity_nearby_medical_practices"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
